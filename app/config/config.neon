@@ -21,7 +21,6 @@ extensions:
     webloader: WebLoader\Nette\Extension
     dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
     orm: Nattreid\Orm\DI\OrmExtension
-    translation: Kdyby\Translation\DI\TranslationExtension
     appManager: NAttreid\AppManager\DI\AppManagerExtension
     console: NAttreid\Console\DI\ConsoleExtension
     securityExtension: NAttreid\Security\DI\SecurityExtension
@@ -29,6 +28,7 @@ extensions:
     tracyPlugin: NAttreid\TracyPlugin\DI\TracyExtension
     webManager: NAttreid\Analytics\DI\WebManagerExtension
 
+    - Kdyby\Translation\DI\TranslationExtension
     - NAttreid\Latte\DI\LatteExtension
     - NAttreid\Form\DI\FormExtension
     - IPub\FlashMessages\DI\FlashMessagesExtension
@@ -84,11 +84,6 @@ console:
 
 dbal:
     simpleStorageTz: Europe/Prague
-
-translation:
-#    default: cs
-#    whitelist: [cs, en]
-#    fallback: [cs_CZ, cs, us_EN, en]
 
 orm:
     model: App\Model\Orm
