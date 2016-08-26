@@ -23,12 +23,8 @@ class FrontRouter extends \NAttreid\Routing\Router {
     public function createRoutes() {
         $routes = $this->getRouter('Front');
 
-
-//        $routes[] = new Route($this->getUrl(). '[<url>]', 'Homepage:page', $this->getFlag());
-//        
-//        $routes[] = new Route($this->getUrl(), 'Homepage:default', $this->getFlag());
-//        $routes[] = new Route($this->getUrl() . 'index.php','Homepage:page', Route::ONE_WAY);
-//        $routes[] = new Route($this->getUrl() . '<presenter>[/<action>]', 'Homepage:page', $this->getFlag());
+        $routes[] = new Route($this->getUrl() . 'sitemap.xml', 'Feed:sitemap');
+        
         $this->pageService->createRoute($routes, $this->getUrl(), $this->getFlag());
     }
 
