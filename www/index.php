@@ -1,7 +1,13 @@
 <?php
 
-// Uncomment this line if you must temporarily take down your site for maintenance.
-// require __DIR__ . '/.maintenance.php';
+if (file_exists(__DIR__ . '/../temp/maintenance')) {
+    if (isset($_GET['maintenanceOff']) || (isset($argv) && $argv[1] == 'maintenanceOff')) {
+        unlink(__DIR__ . '/../temp/maintenance');
+        echo "Maintenance off\n";
+        exit;
+    }
+    require '.maintenance.php';
+}
 
 $container = require __DIR__ . '/../app/bootstrap.php';
 
