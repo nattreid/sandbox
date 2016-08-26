@@ -1,0 +1,34 @@
+{
+    "name": "netta",
+    "description": "Web application with CRM",
+    "license": [
+        "Unlicense"
+    ],
+    "authors": [
+        {
+            "name": "Attreid",
+            "email": "attreid@gmail.com"
+        }
+    ],
+    "ignore": [
+        "bower_components"
+    ],
+    "dependencies": {
+        "jquery": "~1.12",
+        "jquery-ui": "~1.12",
+        "nette.ajax.js": "~2.1",
+        "jquery-ui-touch-punch": "latest",
+        "nette-live-form-validation": "~1.6",
+        "history.nette.ajax.js": "~2.0",
+        "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
+        "analytics": "git@git.newtravel.cz:nattreid/analytics.git#latest",
+        "webManager": "git@git.newtravel.cz:nattreid/web-manager.git#latest",
+        "utils": "git@git.newtravel.cz:nattreid/utils.git#~1.0",
+        "form": "git@git.newtravel.cz:nattreid/form.git#~1.0"
+    },
+    "resolutions": {
+        "jquery": "~1.12",
+        "nette.ajax.js": "~2.1",
+        "nette-forms": "2.2 || 2.3"
+    }
+}

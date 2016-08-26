@@ -1,0 +1,32 @@
+parameters:
+    security:
+        salt: rt564kjh6uz9c
+    front:
+        url: '//netta/'
+        secured: false
+
+dbal:
+    driver: mysqli
+    host: 127.0.0.1
+    database: netta
+    username: netta
+    password: 
+
+mailing:
+    sender: 'Info <info@netta.cz>'
+
+crm:
+    minPasswordLength: 8
+    passwordChars: '0-9a-zA-Z'
+    sender: 'Crm <Crm@netta.cz>'
+
+tracyPlugin:
+    cookie: t8uzf6g54dr8
+
+tracy:
+#    email: 'email@example.com'
+
+appManager:
+    deploy:
+        projectUrl: 'git@git.newtravel.cz:attreid/netta.git'
+        ip: '109.123.216.79'
