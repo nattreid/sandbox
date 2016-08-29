@@ -3,7 +3,7 @@
 ## Instalace
 Nainstalujte [Composer](http://doc.nette.org/composer) a poté spusťte příkaz pro vytvoření projektu 
 ```bash
-composer create-project nattreid/netta --repository-url=git@git.newtravel.cz:nattreid/netta.git
+composer create-project nattreid/netta --repository-url=https://packages.newtravel.cz
 ```
 
 Je třeba mít nainstalované balíčky **npm** a **node.js**
