@@ -69,7 +69,7 @@ gulp.task('fonts', function () {
 
 gulp.task('images', function () {
     return gulp.src([
-        paths.dev + 'filemanager/client-side/images/fileIcons.png'
+        paths.dev + 'filemanager/assets/images/fileManager-icons.png'
     ])
             .pipe(gulp.dest(paths.production.images));
 });
