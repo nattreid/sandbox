@@ -10,6 +10,7 @@ application:
 
 session:
     expiration: %security.sessionExpiration%
+    savePath: %sessionDir%
 
 tracy:
     showLocation: true

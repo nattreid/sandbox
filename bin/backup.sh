@@ -11,8 +11,8 @@ createBackup() {
     DEFAULT_PWD=$PWD
     cd ${ROOT_FOLDER}/bin
 
-    LOGIN=$(cat ../app/config/project.neon | grep -m1 -oP '\s{3}user: \K(.*)$')
-    PASSWORD=$(cat ../app/config/project.neon | grep -m1 -oP '\s{3}password: \K(.*)$')
+    LOGIN=$(cat ../app/config/project.neon | grep -m1 -oP 'username: \K(.*)$')
+    PASSWORD=$(cat ../app/config/project.neon | grep -m1 -oP 'password: \K(.*)$')
 
     mkdir -p backup
     cd backup

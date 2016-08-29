@@ -7,6 +7,9 @@
 /app/config/config.local.neon
 /composer.lock
 
+!/temp/sessions/
+/temp/sessions/*
+
 /www/webtemp/*
 /www/upload/*
 /www/kcfinder/cache/*
