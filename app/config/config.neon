@@ -95,7 +95,7 @@ orm:
         - NAttreid\WebManager\Model\Orm
 
 crm:
-    layout: '%appDir%/modules/crmExt/templates/crm.latte'
+    layout: '%appDir%/modules/CrmExt/templates/crm.latte'
     front: ':Front:Homepage:'
 
 services:

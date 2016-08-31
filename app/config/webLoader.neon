@@ -6,7 +6,7 @@ webloader:
         front:
             files:
                 - %wwwDir%/css/front.min.css
-                - {files: ["*.css", "*.less"], from: %appDir%/modules/front}
+                - {files: ["*.css", "*.less"], from: %appDir%/modules/Front}
             fileFilters:
                 - @lessFilter
                 - @cssMin
@@ -14,7 +14,7 @@ webloader:
         front:
             files:
                 - %wwwDir%/js/front.min.js
-                - {files: ["*.js"], from: %appDir%/modules/front}
+                - {files: ["*.js"], from: %appDir%/modules/Front}
             fileFilters:
                 - @jsMin
 
