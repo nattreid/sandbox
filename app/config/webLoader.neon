@@ -8,14 +8,6 @@ webloader:
                 - %wwwDir%/css/front.min.css
                 - {files: ["*.css", "*.less"], from: %appDir%/modules/Front}
             fileFilters:
-                - @wlCssFilter
-                - @lessFilter
-                - @cssMin
-        crm:
-            files:
-                - {files: ["*.css", "*.less"], from: %appDir%/modules/CrmExt}
-            fileFilters:
-                - @wlCssFilter
                 - @lessFilter
                 - @cssMin
     js:
@@ -29,11 +21,5 @@ webloader:
         frontCs:
             files:
                 - %wwwDir%/js/i18n/frontCs.min.js
-            fileFilters:
-                - @jsMin
-
-        crm:
-            files:
-                - {files: ["*.js"], from: %appDir%/modules/CrmExt}
             fileFilters:
                 - @jsMin

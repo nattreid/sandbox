@@ -99,7 +99,6 @@ crm:
     front: ':Front:Homepage:'
 
 services:
-    wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%)
     lessFilter: WebLoader\Filter\LessFilter
     cssMin: Joseki\Webloader\CssMinFilter
     jsMin: Joseki\Webloader\JsMinFilter
