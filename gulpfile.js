@@ -68,10 +68,10 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src([
-        paths.dev + 'filemanager/assets/images/fileManager-icons.png'
-    ])
-            .pipe(gulp.dest(paths.production.images));
+    gulp.src(paths.dev + 'filemanager/assets/images/icons.png')
+            .pipe(gulp.dest(paths.production.images + 'fileManager'));
+    gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
+            .pipe(gulp.dest(paths.production.images + 'crm/jquery-ui'));
 });
 
 gulp.task('tracking', function () {
