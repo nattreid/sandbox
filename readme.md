@@ -13,7 +13,7 @@ sudo apt-get install nodejs npm
 
 a **bower**
 ```bash
-npm install -g bower
+sudo npm install -g bower
 ```
 
 Poté jděte do složky s projektem
