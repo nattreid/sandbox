@@ -11,9 +11,9 @@ Je třeba mít nainstalované balíčky **npm** a **node.js**
 sudo apt-get install nodejs npm
 ```
 
-a **bower**
+Nainstalujeme **bower** a **gulp**
 ```bash
-npm install -g bower
+sudo npm install -g bower gulp
 ```
 
 Poté jděte do složky s projektem
@@ -27,3 +27,16 @@ npm install
 bower install
 gulp
 ```
+
+## Vývoj
+### Nastavení
+Nastavení **config.local.neon**
+```neon
+extensions:
+    fakeSession: Kdyby\FakeSession\DI\FakeSessionExtension  # Vypnuti session
+
+services:
+    cssMin: App\Core\WebLoader\FakeMinimalizer              # Vypne minimalizaci css
+    jsMin: App\Core\WebLoader\FakeMinimalizer               # Vypne minimalizaci js
+    cacheStorage:
+        class: Nette\Caching\Storages\DevNullStorage        # Vypne ukladani cache
