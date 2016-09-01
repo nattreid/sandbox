@@ -27,3 +27,16 @@ npm install
 bower install
 gulp
 ```
+
+## Vývoj
+### Nastavení
+Nastavení **config.local.neon**
+```neon
+extensions:
+    fakeSession: Kdyby\FakeSession\DI\FakeSessionExtension  # Vypnuti session
+
+services:
+    cssMin: App\Core\WebLoader\FakeMinimalizer              # Vypne minimalizaci css
+    jsMin: App\Core\WebLoader\FakeMinimalizer               # Vypne minimalizaci js
+    cacheStorage:
+        class: Nette\Caching\Storages\DevNullStorage        # Vypne ukladani cache
