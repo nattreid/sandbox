@@ -11,9 +11,9 @@ Je třeba mít nainstalované balíčky **npm** a **node.js**
 sudo apt-get install nodejs npm
 ```
 
-a **bower**
+Nainstalujeme **bower** a **gulp**
 ```bash
-sudo npm install -g bower
+sudo npm install -g bower gulp
 ```
 
 Poté jděte do složky s projektem
