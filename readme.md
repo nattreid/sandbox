@@ -40,3 +40,4 @@ services:
     jsMin: App\Core\WebLoader\FakeMinimalizer               # Vypne minimalizaci js
     cacheStorage:
         class: Nette\Caching\Storages\DevNullStorage        # Vypne ukladani cache
+```
