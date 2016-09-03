@@ -9,19 +9,23 @@ use App\Model\Orm;
  *
  * @author Attreid <attreid@gmail.com>
  */
-class FeedPresenter extends BasePresenter {
+class FeedPresenter extends BasePresenter
+{
 
     /** @var Orm @inject */
     private $orm;
 
-    public function __construct(Orm $orm) {
+    public function __construct(Orm $orm)
+    {
+        parent::__construct();
         $this->orm = $orm;
     }
 
     /**
      * Vytvoreni sitemap.xml
      */
-    public function renderSitemap() {
+    public function renderSitemap()
+    {
         $links = [
             $this->link('//:Front:Homepage:')
         ];
