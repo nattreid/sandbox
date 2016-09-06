@@ -16,62 +16,62 @@ use WebLoader\Nette\LoaderFactory;
 abstract class BasePresenter extends \App\Presenters\BasePresenter
 {
 
-    protected function beforeRender()
-    {
-        parent::beforeRender();
-        $this->template->baseKeywords = $this->configurator->keywords;
-        $this->template->baseDescription = $this->configurator->description;
-        $this->template->baseTitle = $this->configurator->title;
-    }
+	protected function beforeRender()
+	{
+		parent::beforeRender();
+		$this->template->baseKeywords = $this->configurator->keywords;
+		$this->template->baseDescription = $this->configurator->description;
+		$this->template->baseTitle = $this->configurator->title;
+	}
 
-    /* ###################################################################### */
-    /*                               Webloader                                */
+	/* ###################################################################### */
+	/*                               Webloader                                */
 
-    /** @var LoaderFactory */
-    private $webLoader;
+	/** @var LoaderFactory */
+	private $webLoader;
 
-    public function injectWebLoader(LoaderFactory $webLoader)
-    {
-        $this->webLoader = $webLoader;
-    }
+	public function injectWebLoader(LoaderFactory $webLoader)
+	{
+		$this->webLoader = $webLoader;
+	}
 
-    /** @return CssLoader */
-    protected function createComponentCss()
-    {
-        return $this->webLoader->createCssLoader('front');
-    }
+	/** @return CssLoader */
+	protected function createComponentCss()
+	{
+		return $this->webLoader->createCssLoader('front');
+	}
 
-    /** @return JavaScriptLoader */
-    protected function createComponentJs()
-    {
-        return $this->webLoader->createJavaScriptLoader('front', 'front' . Strings::firstUpper($this->locale));
-    }
+	/** @return JavaScriptLoader */
+	protected function createComponentJs()
+	{
+		return $this->webLoader->createJavaScriptLoader('front', 'front' . Strings::firstUpper($this->locale));
+	}
 
-    /* ###################################################################### */
-    /*                               Translator                               */
+	/* ###################################################################### */
+	/*                               Translator                               */
 
-    /** @var ICookiePolicyFactory */
-    private $cookiePolicyFactory;
+	/** @var ICookiePolicyFactory */
+	private $cookiePolicyFactory;
 
-    public function injectCookiePolicyFactory(ICookiePolicyFactory $cookiePolicyFactory)
-    {
-        $this->cookiePolicyFactory = $cookiePolicyFactory;
-    }
+	public function injectCookiePolicyFactory(ICookiePolicyFactory $cookiePolicyFactory)
+	{
+		$this->cookiePolicyFactory = $cookiePolicyFactory;
+	}
 
-    protected function createComponentCookiePolicy()
-    {
-        $control = $this->cookiePolicyFactory->create();
+	protected function createComponentCookiePolicy()
+	{
+		$control = $this->cookiePolicyFactory->create();
 
-        $control->getTranslator()->setLang($this->locale);
+		$control->getTranslator()->setLang($this->locale);
 
-        $link = $this->configurator->cookiePolicyLink;
-        if (!empty($link)) {
-            $control->setLink($link);
-        }
+		$link = $this->configurator->cookiePolicyLink;
+		if (!empty($link)) {
+			$control->setLink($link);
+		}
 
-        $control->setView($this->configurator->cookiePolicy);
+		$control->setView($this->configurator->cookiePolicy);
 
-        return $control;
-    }
+		return $control;
+	}
 
 }

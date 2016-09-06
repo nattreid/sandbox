@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="{$locale}">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-        <meta name="viewport" content="{ifset viewport}{include viewport|striptags|strip}{else}width=device-width,initial-scale=1{/ifset}">
+    <meta name="viewport"
+          content="{ifset viewport}{include viewport|striptags|strip}{else}width=device-width,initial-scale=1{/ifset}">
 
-        <title>{ifset title}{include title|striptags|strip} | {/ifset}{$baseTitle}</title>
-        <meta name="og:title" n:ifset="title" content="{include title|striptags|strip}"/>
-        <meta name="og:site_name" content="{$baseTitle}"/>
+    <title>{ifset title}{include title|striptags|strip} | {/ifset}{$baseTitle}</title>
+    <meta name="og:title" n:ifset="title" content="{include title|striptags|strip}"/>
+    <meta name="og:site_name" content="{$baseTitle}"/>
 
-        <meta name="description" content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
-        <meta name="og:description" content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
+    <meta name="description"
+          content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
+    <meta name="og:description"
+          content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
 
-        <meta name="keywords" content="{ifset keywords}{include keywords|strip}{else}{$baseKeywords}{/ifset}"/>     
+    <meta name="keywords" content="{ifset keywords}{include keywords|strip}{else}{$baseKeywords}{/ifset}"/>
 
-        <meta property="og:type" content="{ifset ogType}{include ogType|striptags|strip}{else}website{/ifset}"/>
+    <meta property="og:type" content="{ifset ogType}{include ogType|striptags|strip}{else}website{/ifset}"/>
 
-        <meta property="og:image" n:ifset="ogImage" content="{include ogImage|striptags|strip}"/>
+    <meta property="og:image" n:ifset="ogImage" content="{include ogImage|striptags|strip}"/>
 
-        <meta property="og:url" content="{ifset ogUrl}{include ogUrl|striptags|strip}{else}{link //this}{/ifset}"/>
+    <meta property="og:url" content="{ifset ogUrl}{include ogUrl|striptags|strip}{else}{link //this}{/ifset}"/>
 
-        <meta name="robots" content="index,follow"/>
-        <meta name="author" content=""/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="author" content=""/>
 
-        {control css}
-        {control js}
+    {control css}
+    {control js}
 
-        {block head}{/block}
-    </head>
-    <body>
-        <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-        {block content}{/block}
-        
-        {control cookiePolicy}
-        {block boxes}{/block}
-        
-        <script async type="text/javascript" src="/js/nTracker.min.js"></script>
-        {block scripts}{/block}
-    </body>
+    {block head}{/block}
+</head>
+<body>
+<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+{block content}{/block}
+
+{control cookiePolicy}
+{block boxes}{/block}
+
+<script async type="text/javascript" src="/js/nTracker.min.js"></script>
+{block scripts}{/block}
+</body>
 </html>

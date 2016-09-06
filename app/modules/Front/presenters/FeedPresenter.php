@@ -12,31 +12,31 @@ use App\Model\Orm;
 class FeedPresenter extends BasePresenter
 {
 
-    /** @var Orm @inject */
-    private $orm;
+	/** @var Orm */
+	private $orm;
 
-    public function __construct(Orm $orm)
-    {
-        parent::__construct();
-        $this->orm = $orm;
-    }
+	public function __construct(Orm $orm)
+	{
+		parent::__construct();
+		$this->orm = $orm;
+	}
 
-    /**
-     * Vytvoreni sitemap.xml
-     */
-    public function renderSitemap()
-    {
-        $links = [
-            $this->link('//:Front:Homepage:')
-        ];
+	/**
+	 * Vytvoreni sitemap.xml
+	 */
+	public function renderSitemap()
+	{
+		$links = [
+			$this->link('//:Front:Homepage:')
+		];
 
-        // staticke stranky
-        $pages = $this->orm->pages->findPages();
-        foreach ($pages as $page) {
-            $links[] = $this->link('//:Front:Homepage:page', $page->url);
-        }
+		// staticke stranky
+		$pages = $this->orm->pages->findPages();
+		foreach ($pages as $page) {
+			$links[] = $this->link('//:Front:Homepage:page', $page->url);
+		}
 
-        $this->template->links = $links;
-    }
+		$this->template->links = $links;
+	}
 
 }

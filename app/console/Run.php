@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Console;
+
 use NAttreid\Console\CommandCollection;
 
 /**
