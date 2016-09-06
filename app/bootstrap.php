@@ -14,8 +14,8 @@ $configurator->setTimeZone('Europe/Prague');
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 $configurator->createRobotLoader()
-    ->addDirectory(__DIR__)
-    ->register();
+	->addDirectory(__DIR__)
+	->register();
 
 $configurator->addConfig(__DIR__ . '/config/config.neon');
 $configurator->addConfig(__DIR__ . '/config/project.neon');
@@ -23,8 +23,8 @@ $configurator->addConfig(__DIR__ . '/config/webLoader.neon');
 $configurator->addConfig(__DIR__ . '/config/config.local.neon');
 
 $configurator->addParameters([
-    'logDir' => __DIR__ . '/../log',
-    'sessionDir' => __DIR__ . '/../temp/sessions'
+	'logDir' => __DIR__ . '/../log',
+	'sessionDir' => __DIR__ . '/../temp/sessions'
 ]);
 
 $container = $configurator->createContainer();

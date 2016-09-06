@@ -1,10 +1,10 @@
 var gulp = require('gulp'),
-        less = require('gulp-less'),
-        minify = require('gulp-clean-css'),
-        concat = require('gulp-concat'),
-        uglify = require('gulp-uglify'),
-        rename = require('gulp-rename'),
-        del = require('del');
+    less = require('gulp-less'),
+    minify = require('gulp-clean-css'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    del = require('del');
 
 var paths = {
     'dev': './bower_components/',
@@ -34,18 +34,18 @@ gulp.task('jsFront', function () {
         paths.dev + 'utils/assets/utils.js',
         paths.dev + 'history.nette.ajax.js/client-side/history.ajax.js'
     ])
-            .pipe(concat('front.min.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest(paths.production.js));
+        .pipe(concat('front.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.production.js));
 });
 
 gulp.task('jsFrontCs', function () {
     return gulp.src([
         paths.dev + 'jquery-ui/ui/i18n/datepicker-cs.js'
     ])
-            .pipe(concat('frontCs.min.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest(paths.production.lang));
+        .pipe(concat('frontCs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.production.lang));
 });
 
 gulp.task('cssFront', function () {
@@ -53,10 +53,10 @@ gulp.task('cssFront', function () {
         paths.dev + 'jquery-ui/themes/base/jquery-ui.css',
         paths.dev + 'cookiepolicy/assets/cookiePolicy.less'
     ])
-            .pipe(less())
-            .pipe(concat('front.min.css'))
-            .pipe(minify({keepSpecialComments: 0}))
-            .pipe(gulp.dest(paths.production.css));
+        .pipe(less())
+        .pipe(concat('front.min.css'))
+        .pipe(minify({keepSpecialComments: 0}))
+        .pipe(gulp.dest(paths.production.css));
 });
 
 gulp.task('fonts', function () {
@@ -64,21 +64,21 @@ gulp.task('fonts', function () {
         paths.dev + 'font-awesome/fonts/*',
         paths.dev + 'bootstrap/fonts/*'
     ])
-            .pipe(gulp.dest(paths.production.fonts));
+        .pipe(gulp.dest(paths.production.fonts));
 });
 
 gulp.task('images', function () {
     gulp.src(paths.dev + 'filemanager/assets/images/icons.png')
-            .pipe(gulp.dest(paths.production.images + 'fileManager'));
+        .pipe(gulp.dest(paths.production.images + 'fileManager'));
     gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
-            .pipe(gulp.dest(paths.production.images + 'crm/jquery-ui'));
+        .pipe(gulp.dest(paths.production.images + 'crm/jquery-ui'));
 });
 
 gulp.task('tracking', function () {
     return gulp.src([
         paths.dev + 'tracking/assets/nTracker.min.js'
     ])
-            .pipe(gulp.dest(paths.production.js));
+        .pipe(gulp.dest(paths.production.js));
 });
 
 gulp.task('ckeditor', function () {
@@ -86,7 +86,7 @@ gulp.task('ckeditor', function () {
         paths.dev + 'ckeditor/**/*',
         '!' + paths.dev + 'ckeditor/config.js'
     ])
-            .pipe(gulp.dest(paths.production.ckeditor));
+        .pipe(gulp.dest(paths.production.ckeditor));
 });
 
 gulp.task('kcfinder', function () {
@@ -94,7 +94,7 @@ gulp.task('kcfinder', function () {
         paths.dev + 'kcfinder/**/*',
         '!' + paths.dev + 'kcfinder/conf/config.php'
     ])
-            .pipe(gulp.dest(paths.production.kcfinder));
+        .pipe(gulp.dest(paths.production.kcfinder));
 });
 
 gulp.task('clean', function (cb) {
