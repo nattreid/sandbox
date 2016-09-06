@@ -24,7 +24,7 @@
     "analytics": "git@git.newtravel.cz:nattreid/analytics.git#latest",
     "webManager": "git@git.newtravel.cz:nattreid/web-manager.git#latest",
     "utils": "git@git.newtravel.cz:nattreid/utils.git#~1.0",
-    "form": "git@git.newtravel.cz:nattreid/form.git#~1.0"
+    "form": "git@git.newtravel.cz:nattreid/form.git#latest"
   },
   "resolutions": {
     "jquery": "~1.12",
