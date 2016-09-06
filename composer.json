@@ -49,7 +49,7 @@
     "nette/tester": "^1.7",
     "kdyby/forms-replicator": "dev-master",
     "nattreid/filemanager": "dev-master",
-    "attreid/forms": "dev-master",
+    "nextras/forms": "dev-master",
     "attreid/datagrid": "dev-master"
   },
   "minimum-stability": "stable"
