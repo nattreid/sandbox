@@ -47,10 +47,10 @@
   },
   "require-dev": {
     "nette/tester": "^1.7",
+    "kdyby/fake-session": "~2.0",
     "kdyby/forms-replicator": "dev-master",
     "nattreid/filemanager": "dev-master",
-    "nextras/forms": "dev-master",
-    "attreid/datagrid": "dev-master"
+    "nextras/forms": "dev-master"
   },
   "minimum-stability": "stable"
 }
