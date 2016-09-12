@@ -15,7 +15,8 @@ var paths = {
         'fonts': './www/fonts/',
         'images': './www/images/',
         'ckeditor': './www/ckeditor/',
-        'kcfinder': './www/kcfinder/'
+        'kcfinder': './www/kcfinder/',
+        'cache': ['./temp/cache/', './www/webtemp/**.*', '!./www/webtemp/.htaccess']
     }
 };
 
@@ -97,6 +98,10 @@ gulp.task('kcfinder', function () {
         .pipe(gulp.dest(paths.production.kcfinder));
 });
 
+gulp.task('clearCache', function (cb) {
+    del(paths.production.cache, cb);
+});
+
 gulp.task('clean', function (cb) {
     del([
         paths.production.js,
@@ -112,5 +117,5 @@ gulp.task('clean', function (cb) {
     ], cb);
 });
 
-gulp.task('default', ['jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
+gulp.task('default', ['clearCache', 'jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
 
