@@ -28,13 +28,13 @@ extensions:
     crm: NAttreid\Crm\DI\CrmExtension
     tracyPlugin: NAttreid\TracyPlugin\DI\TracyExtension
     webManager: NAttreid\Analytics\DI\WebManagerExtension
+    analytics: NAttreid\Analytics\DI\AnalyticsExtension
 
     - Kdyby\Translation\DI\TranslationExtension
     - NAttreid\Latte\DI\LatteExtension
     - NAttreid\Form\DI\FormExtension
     - IPub\FlashMessages\DI\FlashMessagesExtension
     - NAttreid\Tracking\DI\TrackingExtension
-    - NAttreid\Analytics\DI\AnalyticsExtension
     
 webManager:
     homepage: 'Homepage:default'
