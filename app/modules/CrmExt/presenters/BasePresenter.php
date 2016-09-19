@@ -2,6 +2,7 @@
 
 namespace App\CrmModule\Presenters;
 
+use App\CrmModule\IConfigurator;
 use NAttreid\Crm\Control\ModulePresenter;
 
 /**
@@ -11,5 +12,6 @@ use NAttreid\Crm\Control\ModulePresenter;
  */
 abstract class BasePresenter extends ModulePresenter
 {
-
+	/** @var IConfigurator */
+	protected $configurator;
 }

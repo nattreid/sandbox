@@ -29,7 +29,7 @@
     "dg/adminer-custom": "^1.7",
     "nattreid/latte": "~1.0",
     "nattreid/routing": "~1.0",
-    "nattreid/form": "dev-master",
+    "nattreid/form": "~1.0",
     "nattreid/mailing": "~1.0",
     "nattreid/orm": "~1.0",
     "nattreid/appmanager": "~1.0",
@@ -47,10 +47,7 @@
   },
   "require-dev": {
     "nette/tester": "^1.7",
-    "kdyby/fake-session": "~2.0",
-    "kdyby/forms-replicator": "dev-master",
-    "nattreid/filemanager": "dev-master",
-    "nextras/forms": "dev-master"
+    "kdyby/fake-session": "~2.0"
   },
   "minimum-stability": "stable"
 }
