@@ -48,7 +48,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	}
 
 	/* ###################################################################### */
-	/*                               Translator                               */
+	/*                              CookiePolicy                              */
 
 	/** @var ICookiePolicyFactory */
 	private $cookiePolicyFactory;

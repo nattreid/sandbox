@@ -2,7 +2,7 @@
 
 namespace App\CrmModule\Presenters;
 
-use App\CrmModule\IConfigurator;
+use App\Services\IConfigurator;
 use NAttreid\Crm\Control\ModulePresenter;
 
 /**

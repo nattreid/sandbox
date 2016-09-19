@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CrmModule;
+namespace App\Services;
 
 /**
  * Interface IConfigurator

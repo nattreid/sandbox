@@ -2,15 +2,24 @@
 
 namespace App\Presenters;
 
+use App\Services\IConfigurator;
+use Kdyby\Translation\Translator;
+use NAttreid\Crm\Configurator\Configurator;
+use NAttreid\Latte\TemplateTrait;
+use NAttreid\Utils\Date;
+use NAttreid\Utils\Number;
+use Nextras\Application\UI\SecuredLinksPresenterTrait;
+use WebChemistry\Images\TPresenter;
+
 /**
  * Base presenter for all application presenters.
  */
 abstract class BasePresenter extends \Nette\Application\UI\Presenter
 {
 
-	use \WebChemistry\Images\TPresenter,
-		\NAttreid\Latte\TemplateTrait,
-		\Nextras\Application\UI\SecuredLinksPresenterTrait;
+	use TPresenter,
+		TemplateTrait,
+		SecuredLinksPresenterTrait;
 
 	protected function startup()
 	{
@@ -20,18 +29,18 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter
 		if (empty($this->locale)) {
 			$this->locale = $this->translator->getDefaultLocale();
 		}
-		\NAttreid\Utils\Number::setLocale($this->locale);
-		\NAttreid\Utils\Date::setLocale($this->locale);
+		Number::setLocale($this->locale);
+		Date::setLocale($this->locale);
 		$this->template->locale = $this->locale;
 	}
 
 	/* ###################################################################### */
 	/*                               Configurator                             */
 
-	/** @var \NAttreid\Crm\Configurator */
+	/** @var IConfigurator */
 	protected $configurator;
 
-	public function injectConfigurator(\NAttreid\Crm\Configurator $configurator)
+	public function injectConfigurator(Configurator $configurator)
 	{
 		$this->configurator = $configurator;
 	}
@@ -42,10 +51,10 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter
 	/** @persistent */
 	public $locale;
 
-	/** @var \Kdyby\Translation\Translator */
+	/** @var Translator */
 	private $translator;
 
-	public function injectTranslator(\Kdyby\Translation\Translator $translator)
+	public function injectTranslator(Translator $translator)
 	{
 		$this->translator = $translator;
 	}
