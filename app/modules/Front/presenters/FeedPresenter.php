@@ -2,8 +2,7 @@
 
 namespace App\FrontModule\Presenters;
 
-use NAttreid\WebManager\Model\Orm;
-use Nextras\Orm\Model\Model;
+use NAttreid\WebManager\PageService;
 
 /**
  * Feedy
@@ -13,13 +12,13 @@ use Nextras\Orm\Model\Model;
 class FeedPresenter extends BasePresenter
 {
 
-	/** @var Orm */
-	private $orm;
+	/** @var PageService */
+	private $pageService;
 
-	public function __construct(Model $orm)
+	public function __construct(PageService $pageService)
 	{
 		parent::__construct();
-		$this->orm = $orm;
+		$this->pageService = $pageService;
 	}
 
 	/**
@@ -32,7 +31,7 @@ class FeedPresenter extends BasePresenter
 		];
 
 		// staticke stranky
-		$pages = $this->orm->pages->findPages();
+		$pages = $this->pageService->getPages();
 		foreach ($pages as $page) {
 			$links[] = $this->link('//:Front:Homepage:page', $page->url);
 		}
