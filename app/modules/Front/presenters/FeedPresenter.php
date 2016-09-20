@@ -2,7 +2,8 @@
 
 namespace App\FrontModule\Presenters;
 
-use App\Model\Orm;
+use NAttreid\WebManager\Model\Orm;
+use Nextras\Orm\Model\Model;
 
 /**
  * Feedy
@@ -15,7 +16,7 @@ class FeedPresenter extends BasePresenter
 	/** @var Orm */
 	private $orm;
 
-	public function __construct(Orm $orm)
+	public function __construct(Model $orm)
 	{
 		parent::__construct();
 		$this->orm = $orm;
