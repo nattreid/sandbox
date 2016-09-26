@@ -16,9 +16,9 @@ class FrontRouter extends \NAttreid\Routing\Router
 	/** @var PageService */
 	private $pageService;
 
-	public function __construct($url, $secured, PageService $pageService)
+	public function __construct($url, PageService $pageService)
 	{
-		parent::__construct($url, $secured);
+		parent::__construct($url);
 		$this->pageService = $pageService;
 	}
 
@@ -28,7 +28,7 @@ class FrontRouter extends \NAttreid\Routing\Router
 
 		$routes[] = new Route($this->getUrl() . 'sitemap.xml', 'Feed:sitemap');
 
-		$this->pageService->createRoute($routes, $this->getUrl(), $this->getFlag());
+		$this->pageService->createRoute($routes, $this->getUrl());
 	}
 
 }

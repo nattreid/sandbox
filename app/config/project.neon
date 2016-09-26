@@ -3,7 +3,6 @@ parameters:
         salt: rt564kjh6uz9c
     front:
         url: '//netta/'
-        secured: false
 
 dbal:
     driver: mysqli

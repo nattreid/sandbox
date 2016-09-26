@@ -42,7 +42,7 @@ webManager:
 
 router:
     routers: 
-        - App\FrontModule\Router\FrontRouter(%front.url%, %front.secured%)
+        - App\FrontModule\Router\FrontRouter(%front.url%)
 
 images:
     wwwDir: %wwwDir%
