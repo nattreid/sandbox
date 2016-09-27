@@ -39,6 +39,7 @@ extensions:
 webManager:
     homepage: 'Homepage:default'
     page: 'Homepage:page'
+    module: 'Front'
 
 router:
     routers: 

@@ -24,9 +24,6 @@ class HomepagePresenter extends BasePresenter
 	public function actionPage($url)
 	{
 		$page = $this->pageService->getPage($url, $this->locale);
-		if (!$page) {
-			$this->error();
-		}
 		$this->template->page = $page;
 	}
 
