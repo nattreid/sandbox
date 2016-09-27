@@ -2,7 +2,7 @@
 
 namespace App\FrontModule\Presenters;
 
-use NAttreid\WebManager\PageService;
+use NAttreid\WebManager\Service;
 
 /**
  * Homepage presenter.
@@ -12,18 +12,18 @@ use NAttreid\WebManager\PageService;
 class HomepagePresenter extends BasePresenter
 {
 
-	/** @var PageService */
-	private $pageService;
+	/** @var Service */
+	private $webManager;
 
-	public function __construct(PageService $pageService)
+	public function __construct(Service $webManager)
 	{
 		parent::__construct();
-		$this->pageService = $pageService;
+		$this->webManager = $webManager;
 	}
 
 	public function actionPage($url)
 	{
-		$page = $this->pageService->getPage($url, $this->locale);
+		$page = $this->webManager->getPage($url, $this->locale);
 		$this->template->page = $page;
 	}
 

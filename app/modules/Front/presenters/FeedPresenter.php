@@ -2,7 +2,7 @@
 
 namespace App\FrontModule\Presenters;
 
-use NAttreid\WebManager\PageService;
+use NAttreid\WebManager\Service;
 
 /**
  * Feedy
@@ -12,13 +12,13 @@ use NAttreid\WebManager\PageService;
 class FeedPresenter extends BasePresenter
 {
 
-	/** @var PageService */
-	private $pageService;
+	/** @var Service */
+	private $webManager;
 
-	public function __construct(PageService $pageService)
+	public function __construct(Service $webManager)
 	{
 		parent::__construct();
-		$this->pageService = $pageService;
+		$this->webManager = $webManager;
 	}
 
 	/**
@@ -31,7 +31,7 @@ class FeedPresenter extends BasePresenter
 		];
 
 		// staticke stranky
-		$pages = $this->pageService->getPages();
+		$pages = $this->webManager->getPages();
 		foreach ($pages as $page) {
 			$links[] = $this->link('//:Front:Homepage:page', $page->url);
 		}
