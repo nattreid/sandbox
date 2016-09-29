@@ -8,13 +8,14 @@ use NAttreid\Crm\Configurator\Configurator;
 use NAttreid\Latte\TemplateTrait;
 use NAttreid\Utils\Date;
 use NAttreid\Utils\Number;
+use Nette\Application\UI\Presenter;
 use Nextras\Application\UI\SecuredLinksPresenterTrait;
 use WebChemistry\Images\TPresenter;
 
 /**
  * Base presenter for all application presenters.
  */
-abstract class BasePresenter extends \Nette\Application\UI\Presenter
+abstract class BasePresenter extends Presenter
 {
 
 	use TPresenter,

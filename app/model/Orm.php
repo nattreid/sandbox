@@ -2,11 +2,13 @@
 
 namespace App\Model;
 
+use Nextras\Orm\Model\Model;
+
 /**
  *
  * @author Attreid <attreid@gmail.com>
  */
-class Orm extends \Nextras\Orm\Model\Model
+class Orm extends Model
 {
 
 }

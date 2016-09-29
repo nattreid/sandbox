@@ -2,6 +2,7 @@
 
 namespace App\FrontModule\Router;
 
+use NAttreid\Routing\Router;
 use NAttreid\WebManager\Service;
 use Nette\Application\Routers\Route;
 
@@ -10,7 +11,7 @@ use Nette\Application\Routers\Route;
  *
  * @author Attreid <attreid@gmail.com>
  */
-class FrontRouter extends \NAttreid\Routing\Router
+class FrontRouter extends Router
 {
 
 	/** @var Service */
