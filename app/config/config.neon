@@ -75,7 +75,7 @@ forms:
         '\Nette\Forms\Controls\UploadControl::VALID': 'form.fileUpload'
 
 webloader:
-    debugger: FALSE
+    debugger: false
 
 appManager:
     sessionExpiration: %security.sessionExpiration%
