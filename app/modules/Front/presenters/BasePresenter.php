@@ -1,6 +1,6 @@
 <?php
 
-namespace App\FrontModule\Presenters;
+namespace App\Front\Presenters;
 
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
 use Nette\Utils\Strings;
