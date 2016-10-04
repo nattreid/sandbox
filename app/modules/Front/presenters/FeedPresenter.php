@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Front\Presenters;
+namespace App\FrontModule\Presenters;
 
 use NAttreid\WebManager\Service;
 

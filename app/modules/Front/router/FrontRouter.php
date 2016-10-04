@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Front\Router;
+namespace App\FrontModule\Router;
 
 use NAttreid\Routing\Router;
 use NAttreid\WebManager\Service;
