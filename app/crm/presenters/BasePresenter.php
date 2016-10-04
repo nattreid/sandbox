@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CrmModule\Presenters;
+namespace App\Crm\Presenters;
 
 use App\Services\IConfigurator;
 use NAttreid\Crm\Control\ModulePresenter;
