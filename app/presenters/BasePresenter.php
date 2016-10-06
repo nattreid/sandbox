@@ -80,7 +80,7 @@ abstract class BasePresenter extends Presenter
 	/* ###################################################################### */
 	/*                                FormFactory                             */
 
-	/** @var IConfigurator */
+	/** @var FormFactory */
 	protected $formFactory;
 
 	public function injectFormFactory(FormFactory $formFactory)
