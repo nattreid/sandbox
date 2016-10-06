@@ -106,3 +106,4 @@ services:
 
     - NAttreid\Utils\Hasher(%security.salt%)
     - NAttreid\CookiePolicy\ICookiePolicyFactory
+    - App\Services\FormFactory

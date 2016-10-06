@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Services\FormFactory;
 use App\Services\IConfigurator;
 use Kdyby\Translation\Translator;
 use NAttreid\Crm\Configurator\Configurator;
@@ -76,4 +77,14 @@ abstract class BasePresenter extends Presenter
 		return $this->translator->translate($message, $count, $parameters, $domain, $locale);
 	}
 
+	/* ###################################################################### */
+	/*                                FormFactory                             */
+
+	/** @var IConfigurator */
+	protected $formFactory;
+
+	public function injectFormFactory(FormFactory $formFactory)
+	{
+		$this->formFactory = $formFactory;
+	}
 }
