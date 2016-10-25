@@ -23,7 +23,7 @@ class HomepagePresenter extends BasePresenter
 
 	public function actionPage($url)
 	{
-		$page = $this->webManager->getPage($url, $this->locale);
+		$page = $this->webManager->getPage($url);
 		$this->template->page = $page;
 	}
 
