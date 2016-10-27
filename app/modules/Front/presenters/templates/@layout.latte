@@ -35,7 +35,11 @@
 <body>
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 {block content}{/block}
-
+<div id="copyright">
+    {block copyright}
+        © {NAttreid\Utils\Date::getYearToActual('2014')} <a href="mailto:attreid@gmail.com">Attreid</a>
+    {/block}
+</div>
 {control cookiePolicy}
 {block boxes}{/block}
 
