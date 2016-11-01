@@ -27,7 +27,7 @@ setConfig() {
     cd ${DEFAULT_PWD}
 }
 
-updateComposer() {
+prepareComposer() {
     DEFAULT_PWD=$PWD
     cd ${ROOT_FOLDER}/${TEMP_FOLDER}
 
@@ -56,6 +56,17 @@ updateComposer() {
     cd ${DEFAULT_PWD}
 }
 
+prepareScripts() {
+    DEFAULT_PWD=$PWD
+    cd ${ROOT_FOLDER}
+
+    npm install
+    bower install
+    gulp
+
+    cd ${DEFAULT_PWD}
+}
+
 if [ $# -gt 0 ]; then
     if [ $1 = "-?" ]; then
         help
@@ -68,4 +79,5 @@ ROOT_FOLDER=$(dirname $DIR)
 
 setRights
 setConfig
-updateComposer
+prepareComposer
+prepareScripts
