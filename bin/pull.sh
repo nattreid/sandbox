@@ -8,6 +8,6 @@ DEFAULT_PWD=$PWD
 cd ${ROOT_FOLDER}
 git checkout -- app/
 git checkout -- bin/
-ssh-add bin/id_rsa; git pull 2>&1
+git pull
 rm temp/cache/* -rf
 rm www/webtemp/* -rf
