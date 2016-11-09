@@ -73,6 +73,7 @@ forms:
         IMAGE: 'form.image'
         '\Nette\Forms\Controls\SelectBox::VALID': 'form.option'
         '\Nette\Forms\Controls\UploadControl::VALID': 'form.fileUpload'
+        '\NAttreid\Form\Rules::PHONE': 'form.phone'
 
 webloader:
     debugger: false
