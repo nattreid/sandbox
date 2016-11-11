@@ -23,7 +23,7 @@
     "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
     "analytics": "git@git.newtravel.cz:nattreid/analytics.git#latest",
     "webManager": "git@git.newtravel.cz:nattreid/web-manager.git#latest",
-    "utils": "git@git.newtravel.cz:nattreid/utils.git#~1.0",
+    "utils": "git@git.newtravel.cz:nattreid/utils.git#latest",
     "form": "git@git.newtravel.cz:nattreid/form.git#latest"
   },
   "resolutions": {
