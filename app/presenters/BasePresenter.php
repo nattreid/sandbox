@@ -7,16 +7,20 @@ use App\Services\IConfigurator;
 use Kdyby\Translation\Translator;
 use NAttreid\Crm\Configurator\Configurator;
 use NAttreid\Latte\TemplateTrait;
+use NAttreid\Security\User;
 use NAttreid\Utils\Date;
 use NAttreid\Utils\Number;
-use Nette\Application\UI\Presenter;
 use Nextras\Application\UI\SecuredLinksPresenterTrait;
 use WebChemistry\Images\TPresenter;
 
 /**
- * Base presenter for all application presenters.
+ * Class BasePresenter
+ *
+ * @property-read User $user
+ *
+ * @author Attreid <attreid@gmail.com>
  */
-abstract class BasePresenter extends Presenter
+abstract class BasePresenter extends \Nette\Application\UI\Presenter
 {
 
 	use TPresenter,
@@ -54,7 +58,7 @@ abstract class BasePresenter extends Presenter
 	public $locale;
 
 	/** @var Translator */
-	private $translator;
+	protected $translator;
 
 	public function injectTranslator(Translator $translator)
 	{
