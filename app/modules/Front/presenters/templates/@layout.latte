@@ -33,7 +33,7 @@
     {block head}{/block}
 </head>
 <body>
-<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+{control flashMessages}
 {block content}{/block}
 <div id="copyright">
     {block copyright}

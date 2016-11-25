@@ -3,6 +3,7 @@
 namespace App\Presenters;
 
 use App\Services\IConfigurator;
+use IPub\FlashMessages\TFlashMessages;
 use Kdyby\Translation\Translator;
 use NAttreid\Crm\Configurator\Configurator;
 use NAttreid\Form\Factories\FormFactory;
@@ -25,6 +26,7 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter
 
 	use TPresenter,
 		TemplateTrait,
+		TFlashMessages,
 		SecuredLinksPresenterTrait;
 
 	protected function startup()
