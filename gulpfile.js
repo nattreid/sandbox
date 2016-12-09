@@ -49,6 +49,9 @@ gulp.task('jsFrontCs', function () {
         .pipe(gulp.dest(paths.production.lang));
 });
 
+// *****************************************************************************
+// ************************************  CSS  **********************************
+
 gulp.task('cssFront', function () {
     return gulp.src([
         paths.dev + 'jquery-ui/themes/base/jquery-ui.css',
@@ -60,6 +63,9 @@ gulp.task('cssFront', function () {
         .pipe(gulp.dest(paths.production.css));
 });
 
+// *****************************************************************************
+// **********************************  Fonts  **********************************
+
 gulp.task('fonts', function () {
     return gulp.src([
         paths.dev + 'font-awesome/fonts/*',
@@ -68,6 +74,9 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(paths.production.fonts));
 });
 
+// *****************************************************************************
+// *********************************  Images  **********************************
+
 gulp.task('images', function () {
     gulp.src(paths.dev + 'filemanager/assets/images/icons.png')
         .pipe(gulp.dest(paths.production.images + 'fileManager'));
@@ -75,12 +84,18 @@ gulp.task('images', function () {
         .pipe(gulp.dest(paths.production.images + 'crm/jquery-ui'));
 });
 
+// *****************************************************************************
+// ********************************  Tracking  *********************************
+
 gulp.task('tracking', function () {
     return gulp.src([
         paths.dev + 'tracking/assets/nTracker.min.js'
     ])
         .pipe(gulp.dest(paths.production.js));
 });
+
+// *****************************************************************************
+// ********************************  CK Editor  ********************************
 
 gulp.task('ckeditor', function () {
     gulp.src([
@@ -90,6 +105,9 @@ gulp.task('ckeditor', function () {
         .pipe(gulp.dest(paths.production.ckeditor));
 });
 
+// *****************************************************************************
+// ********************************  KC Finder  ********************************
+
 gulp.task('kcfinder', function () {
     gulp.src([
         paths.dev + 'kcfinder/**/*',
@@ -97,6 +115,9 @@ gulp.task('kcfinder', function () {
     ])
         .pipe(gulp.dest(paths.production.kcfinder));
 });
+
+// *****************************************************************************
+// **********************************  Clean  **********************************
 
 gulp.task('clearCache', function (cb) {
     del(paths.production.cache, cb);
@@ -118,6 +139,8 @@ gulp.task('clean', function (cb) {
         '!' + paths.production.kcfinder + '/conf/config.php'
     ], cb);
 });
+
+// *****************************************************************************
 
 gulp.task('default', ['clearCache', 'jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
 
