@@ -4,7 +4,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    del = require('del');
+    del = require('del'),
+    modifyCssUrls = require('gulp-modify-css-urls'),
+    streamqueue = require('streamqueue');
 
 var paths = {
     'dev': './bower_components/',
@@ -67,11 +69,10 @@ gulp.task('cssFront', function () {
 // **********************************  Fonts  **********************************
 
 gulp.task('fonts', function () {
-    return gulp.src([
-        paths.dev + 'font-awesome/fonts/*',
-        paths.dev + 'bootstrap/fonts/*'
-    ])
-        .pipe(gulp.dest(paths.production.fonts));
+    gulp.src(paths.dev + 'font-awesome/fonts/*')
+        .pipe(gulp.dest(paths.production.fonts + 'font-awesome'));
+    gulp.src(paths.dev + 'bootstrap/fonts/*')
+        .pipe(gulp.dest(paths.production.fonts + 'bootstrap'));
 });
 
 // *****************************************************************************
