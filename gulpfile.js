@@ -29,7 +29,6 @@ gulp.task('jsFront', function () {
     return gulp.src([
         paths.dev + 'jquery/dist/jquery.js',
         paths.dev + 'jquery-ui/jquery-ui.js',
-        paths.dev + 'nette-forms/src/assets/netteForms.js',
         paths.dev + 'nette.ajax.js/nette.ajax.js',
         paths.dev + 'nette.ajax.js/extensions/confirm.ajax.js',
         paths.dev + 'jquery-ui-touch-punch/jquery.ui.touch-punch.js',
