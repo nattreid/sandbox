@@ -13,7 +13,18 @@
 
 /www/webtemp/*
 /www/upload/*
-/www/kcfinder/cache/*
+/www/css
+/www/fonts
+/www/js
+
+/www/images/*
+!/www/images/front
+
+/www/ckeditor/*
+!/www/ckeditor/config.js
+
+/www/kcfinder/*
+!/www/kcfinder/conf/config.php
 
 /www/assets/*
 !/www/assets/default
