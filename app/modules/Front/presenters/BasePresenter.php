@@ -3,6 +3,7 @@
 namespace App\FrontModule\Presenters;
 
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
+use NAttreid\WebManager\Service;
 use Nette\Utils\Strings;
 use WebLoader\Nette\CssLoader;
 use WebLoader\Nette\JavaScriptLoader;
@@ -72,6 +73,27 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$control->setView($this->configurator->cookiePolicy);
 
 		return $control;
+	}
+
+	/* ###################################################################### */
+	/*                               WebManager                               */
+
+	/** @var Service */
+	private $webManager;
+
+	public function injectWebManagerService(Service $webManager)
+	{
+		$this->webManager = $webManager;
+	}
+
+	protected function createComponentHeaderHooks()
+	{
+		return $this->webManager->createHeader();
+	}
+
+	protected function createComponentFooterHooks()
+	{
+		return $this->webManager->createFooter();
 	}
 
 }
