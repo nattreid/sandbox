@@ -23,6 +23,9 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$this->template->baseKeywords = $this->configurator->keywords;
 		$this->template->baseDescription = $this->configurator->description;
 		$this->template->baseTitle = $this->configurator->title;
+
+		$this->template->menuPages = $this->webManager->findMenuPages();
+		$this->template->footerPages = $this->webManager->findFooterPages();
 	}
 
 	/* ###################################################################### */
