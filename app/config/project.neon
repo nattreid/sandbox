@@ -28,4 +28,4 @@ tracy:
 appManager:
     deploy:
         projectUrl: 'git@git.newtravel.cz:attreid/netta.git'
-        ip: '109.123.216.79'
+        ip: '109.123.216.57'
