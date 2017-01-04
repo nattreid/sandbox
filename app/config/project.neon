@@ -4,6 +4,8 @@ parameters:
     front:
         url: '//netta/'
 
+extensions:
+
 dbal:
     driver: mysqli
     host: 127.0.0.1
