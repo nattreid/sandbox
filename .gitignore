@@ -24,6 +24,8 @@
 !/www/ckeditor/config.js
 
 /www/kcfinder/*
+!/www/kcfinder/conf
+/www/kcfinder/conf/*
 !/www/kcfinder/conf/config.php
 
 /www/assets/*
