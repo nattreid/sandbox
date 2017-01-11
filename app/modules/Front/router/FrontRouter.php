@@ -29,7 +29,7 @@ class FrontRouter extends Router
 
 		$routes[] = new Route($this->getUrl() . 'sitemap.xml', 'Feed:sitemap');
 
-		$this->webManager->createRoute($routes, $this->getUrl());
+		$this->webManager->createRoute($routes, $this->url);
 	}
 
 }
