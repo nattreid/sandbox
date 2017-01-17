@@ -44,7 +44,9 @@
     "joseki/webloader-filters": "~1.1",
     "oyejorge/less.php": "~1.7",
     "webchemistry/images": "~2.1",
-    "attreid/translation": "~2.4"
+    "attreid/translation": "~2.4",
+    "nofutur3/tracy-gitpanel": "^0.9.3",
+    "milo/vendor-versions": "^1.1"
   },
   "require-dev": {
     "nette/tester": "^1.7",

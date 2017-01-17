@@ -14,6 +14,8 @@ session:
 
 tracy:
     showLocation: true
+    bar:
+        - Nofutur3\GitPanel\Diagnostics\Panel
 
 extensions:
     router: NAttreid\Routing\DI\RoutingExtension
@@ -30,12 +32,13 @@ extensions:
     webManager: NAttreid\Analytics\DI\WebManagerExtension
     analytics: NAttreid\Analytics\DI\AnalyticsExtension
 
+    - Milo\VendorVersions\Bridges\Nette\DI\Extension(%debugMode%)
     - Kdyby\Translation\DI\TranslationExtension
     - NAttreid\Latte\DI\LatteExtension
     - NAttreid\Form\DI\FormExtension
     - IPub\FlashMessages\DI\FlashMessagesExtension
     - NAttreid\Tracking\DI\TrackingExtension
-    
+
 webManager:
     homepage: 'Homepage:default'
     page: 'Homepage:page'
