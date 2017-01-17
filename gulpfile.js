@@ -122,12 +122,12 @@ gulp.task('kcfinder', function () {
 // **********************************  Clean  **********************************
 
 gulp.task('on', function (cb) {
-    return file('maintenance', '', {src: true})
-        .pipe(gulp.dest(paths.production.temp));
+    del(paths.production.temp + 'maintenance', cb);
 });
 
 gulp.task('off', function (cb) {
-    del(paths.production.temp + 'maintenance', cb);
+    return file('maintenance', '', {src: true})
+        .pipe(gulp.dest(paths.production.temp));
 });
 
 // *****************************************************************************
