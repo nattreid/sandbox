@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del'),
     modifyCssUrls = require('gulp-modify-css-urls'),
-    streamqueue = require('streamqueue');
+    streamqueue = require('streamqueue'),
+    file = require('gulp-file'),
+    clean = require('gulp-clean');
 
 var paths = {
     'dev': './bower_components/',
@@ -18,7 +20,8 @@ var paths = {
         'images': './www/images/',
         'ckeditor': './www/ckeditor/',
         'kcfinder': './www/kcfinder/',
-        'cache': ['./temp/cache/', './www/webtemp/**.*', '!./www/webtemp/.htaccess']
+        'cache': ['./temp/cache/', './www/webtemp/**.*', '!./www/webtemp/.htaccess'],
+        'temp': './temp/'
     }
 };
 
@@ -114,6 +117,19 @@ gulp.task('kcfinder', function () {
         '!' + paths.dev + 'kcfinder/conf/config.php'
     ])
         .pipe(gulp.dest(paths.production.kcfinder));
+});
+
+// *****************************************************************************
+// **********************************  Clean  **********************************
+
+gulp.task('on', function (cb) {
+    return file('maintenance', '', {src: true})
+        .pipe(gulp.dest(paths.production.temp));
+});
+
+gulp.task('off', function (cb) {
+    return gulp.src(paths.production.temp + 'maintenance', {read: false})
+        .pipe(clean());
 });
 
 // *****************************************************************************
