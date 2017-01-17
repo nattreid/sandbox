@@ -7,8 +7,7 @@ var gulp = require('gulp'),
     del = require('del'),
     modifyCssUrls = require('gulp-modify-css-urls'),
     streamqueue = require('streamqueue'),
-    file = require('gulp-file'),
-    clean = require('gulp-clean');
+    file = require('gulp-file');
 
 var paths = {
     'dev': './bower_components/',
@@ -128,8 +127,7 @@ gulp.task('on', function (cb) {
 });
 
 gulp.task('off', function (cb) {
-    return gulp.src(paths.production.temp + 'maintenance', {read: false})
-        .pipe(clean());
+    del(paths.production.temp + 'maintenance', cb);
 });
 
 // *****************************************************************************
