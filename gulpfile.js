@@ -133,7 +133,7 @@ gulp.task('off', function (cb) {
 // *****************************************************************************
 // **********************************  Clean  **********************************
 
-gulp.task('clearCache', function (cb) {
+gulp.task('cache', function (cb) {
     del(paths.production.cache, cb);
 });
 
@@ -156,5 +156,5 @@ gulp.task('clean', function (cb) {
 
 // *****************************************************************************
 
-gulp.task('default', ['clearCache', 'jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
+gulp.task('default', ['cache', 'jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
 
