@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Crm\Presenters;
+namespace App\Cms\Presenters;
 
 use App\Services\IConfigurator;
-use NAttreid\Crm\Control\ModulePresenter;
+use NAttreid\Cms\Control\ModulePresenter;
 
 /**
  * Zakladni presenter

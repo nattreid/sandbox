@@ -1,6 +1,6 @@
 {
   "name": "netta",
-  "description": "Web application with CRM",
+  "description": "Web application with CMS",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",

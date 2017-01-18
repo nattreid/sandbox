@@ -27,7 +27,7 @@ extensions:
     appManager: NAttreid\AppManager\DI\AppManagerExtension
     console: NAttreid\Console\DI\ConsoleExtension
     securityExtension: NAttreid\Security\DI\SecurityExtension
-    crm: NAttreid\Crm\DI\CrmExtension
+    cms: NAttreid\Cms\DI\CmsExtension
     tracyPlugin: NAttreid\TracyPlugin\DI\TracyExtension
     webManager: NAttreid\Analytics\DI\WebManagerExtension
     analytics: NAttreid\Analytics\DI\AnalyticsExtension
@@ -98,12 +98,12 @@ orm:
     model: App\Model\Orm
     add:
         - NAttreid\Security\Model\Orm
-        - NAttreid\Crm\Model\Orm
+        - NAttreid\Cms\Model\Orm
         - NAttreid\Tracking\Model\Orm
         - NAttreid\WebManager\Model\Orm
 
-crm:
-    layout: '%appDir%/crm/templates/crm.latte'
+cms:
+    layout: '%appDir%/cms/templates/cms.latte'
     front: ':Front:Homepage:'
 
 services:

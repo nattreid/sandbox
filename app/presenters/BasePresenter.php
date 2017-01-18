@@ -5,7 +5,7 @@ namespace App\Presenters;
 use App\Services\IConfigurator;
 use IPub\FlashMessages\TFlashMessages;
 use Kdyby\Translation\Translator;
-use NAttreid\Crm\Configurator\Configurator;
+use NAttreid\Cms\Configurator\Configurator;
 use NAttreid\Form\Factories\FormFactory;
 use NAttreid\Latte\TemplateTrait;
 use NAttreid\Security\User;

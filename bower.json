@@ -1,6 +1,6 @@
 {
   "name": "netta",
-  "description": "Web application with CRM",
+  "description": "Web application with CMS",
   "license": [
     "Unlicense"
   ],
@@ -20,7 +20,7 @@
     "jquery-ui-touch-punch": "latest",
     "nette-live-form-validation": "~1.6",
     "history.nette.ajax.js": "~2.0",
-    "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
+    "cms": "git@git.newtravel.cz:nattreid/cms.git#latest",
     "analytics": "git@git.newtravel.cz:nattreid/analytics.git#latest",
     "webManager": "git@git.newtravel.cz:nattreid/web-manager.git#latest",
     "utils": "git@git.newtravel.cz:nattreid/utils.git#latest",

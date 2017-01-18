@@ -7,7 +7,7 @@ namespace App\Services;
  *
  * @author Attreid <attreid@gmail.com>
  */
-interface IConfigurator extends \NAttreid\Crm\Configurator\IConfigurator, \NAttreid\WebManager\IConfigurator
+interface IConfigurator extends \NAttreid\Cms\Configurator\IConfigurator, \NAttreid\WebManager\IConfigurator
 {
 
 }

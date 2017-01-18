@@ -120,7 +120,7 @@ $container = $configurator->createContainer();
 
 $resource = 'KCFinder';
 $user = $container->getService('user');
-$user->getStorage()->setNamespace('crm');
+$user->getStorage()->setNamespace('cms');
 $_CONFIG['disabled'] = !$user->isAllowed($resource, 'view');
 
 if ($user->isAllowed($resource, 'edit')) {

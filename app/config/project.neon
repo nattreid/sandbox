@@ -16,10 +16,10 @@ dbal:
 mailing:
     sender: 'Info <info@netta.cz>'
 
-crm:
+cms:
     minPasswordLength: 8
     passwordChars: '0-9a-zA-Z'
-    sender: 'Crm <Crm@netta.cz>'
+    sender: 'Cms <Cms@netta.cz>'
 
 tracyPlugin:
     cookie: t8uzf6g54dr8

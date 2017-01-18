@@ -1,6 +1,6 @@
 {
   "name": "nattreid/netta",
-  "description": "Web application with CRM",
+  "description": "Web application with CMS",
   "type": "project",
   "license": [
     "Unlicense"
@@ -36,7 +36,7 @@
     "nattreid/appmanager": "~1.0",
     "nattreid/console": "~1.0",
     "nattreid/security": "~1.0",
-    "nattreid/crm": "~1.0",
+    "nattreid/cms": "~1.0",
     "nattreid/analytics": "~1.0",
     "nattreid/web-manager": "~1.0",
     "nextras/secured-links": "~1.3",
