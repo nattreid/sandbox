@@ -118,7 +118,7 @@ $configurator->addParameters([
 
 $container = $configurator->createContainer();
 
-$resource = 'KCFinder';
+$resource = 'cms.KCFinder';
 $user = $container->getService('user');
 $user->getStorage()->setNamespace('cms');
 $_CONFIG['disabled'] = !$user->isAllowed($resource, 'view');
