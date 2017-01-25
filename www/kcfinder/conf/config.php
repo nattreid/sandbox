@@ -114,7 +114,8 @@ $configurator->addConfig($path . 'app/config/config.local.neon');
 $configurator->addParameters([
 	'logDir' => $path . 'log',
 	'sessionDir' => $path . 'temp/sessions',
-	'wwwDir' => $path . 'www'
+	'wwwDir' => $path . 'www',
+	'appDir' => $path . 'app'
 ]);
 
 $container = $configurator->createContainer();
