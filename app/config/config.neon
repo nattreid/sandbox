@@ -14,6 +14,8 @@ session:
 
 tracy:
     showLocation: true
+    maxDepth: 10
+    maxLen: 500
     bar:
         - Nofutur3\GitPanel\Diagnostics\Panel
 
