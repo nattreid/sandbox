@@ -26,7 +26,7 @@ extensions:
     console: NAttreid\Console\DI\ConsoleExtension
     securityExtension: NAttreid\Security\DI\SecurityExtension
     cms: NAttreid\Cms\DI\CmsExtension
-    webManager: NAttreid\Analytics\DI\WebManagerExtension
+    webManager: NAttreid\WebManager\DI\WebManagerExtension
     analytics: NAttreid\Analytics\DI\AnalyticsExtension
 
     - Kdyby\Translation\DI\TranslationExtension

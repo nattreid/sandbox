@@ -3,7 +3,7 @@
 namespace App\FrontModule\Router;
 
 use NAttreid\Routing\Router;
-use NAttreid\WebManager\Service;
+use NAttreid\WebManager\Services\PageService;
 use Nette\Application\Routers\Route;
 
 /**
@@ -14,13 +14,13 @@ use Nette\Application\Routers\Route;
 class FrontRouter extends Router
 {
 
-	/** @var Service */
-	private $webManager;
+	/** @var PageService */
+	private $pageService;
 
-	public function __construct($url, Service $webManager)
+	public function __construct($url, PageService $pageService)
 	{
 		parent::__construct($url);
-		$this->webManager = $webManager;
+		$this->pageService = $pageService;
 	}
 
 	public function createRoutes()
@@ -29,7 +29,7 @@ class FrontRouter extends Router
 
 		$routes[] = new Route($this->getUrl() . 'sitemap.xml', 'Feed:sitemap');
 
-		$this->webManager->createRoute($routes, $this->url);
+		$this->pageService->createRoute($routes, $this->url);
 	}
 
 }

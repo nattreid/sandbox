@@ -3,7 +3,7 @@
 namespace App\FrontModule\Presenters;
 
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
-use NAttreid\WebManager\Service;
+use NAttreid\WebManager\Services\PageService;
 use Nette\Utils\Strings;
 use WebLoader\Nette\CssLoader;
 use WebLoader\Nette\JavaScriptLoader;
@@ -24,8 +24,8 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$this->template->baseDescription = $this->configurator->description;
 		$this->template->baseTitle = $this->configurator->title;
 
-		$this->template->menuPages = $this->webManager->findMenuPages();
-		$this->template->footerPages = $this->webManager->findFooterPages();
+		$this->template->menuPages = $this->pageService->findMenuPages();
+		$this->template->footerPages = $this->pageService->findFooterPages();
 	}
 
 	/* ###################################################################### */
@@ -81,22 +81,21 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	/* ###################################################################### */
 	/*                               WebManager                               */
 
-	/** @var Service */
-	private $webManager;
+	/** @var PageService */
+	private $pageService;
 
-	public function injectWebManagerService(Service $webManager)
+	public function injectWebManagerService(PageService $pageService)
 	{
-		$this->webManager = $webManager;
+		$this->pageService = $pageService;
 	}
 
 	protected function createComponentHeaderHooks()
 	{
-		return $this->webManager->createHeader();
+		return $this->pageService->createHeader();
 	}
 
 	protected function createComponentFooterHooks()
 	{
-		return $this->webManager->createFooter();
+		return $this->pageService->createFooter();
 	}
-
 }
