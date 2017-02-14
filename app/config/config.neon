@@ -26,7 +26,6 @@ extensions:
     console: NAttreid\Console\DI\ConsoleExtension
     securityExtension: NAttreid\Security\DI\SecurityExtension
     cms: NAttreid\Cms\DI\CmsExtension
-    tracyPlugin: NAttreid\TracyPlugin\DI\TracyExtension
     webManager: NAttreid\Analytics\DI\WebManagerExtension
     analytics: NAttreid\Analytics\DI\AnalyticsExtension
 
@@ -102,6 +101,7 @@ orm:
 cms:
     layout: '%appDir%/cms/templates/cms.latte'
     front: ':Front:Homepage:'
+    sessionExpiration: %security.sessionExpiration%
 
 services:
     lessFilter: WebLoader\Filter\LessFilter

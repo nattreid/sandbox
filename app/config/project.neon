@@ -20,9 +20,8 @@ cms:
     minPasswordLength: 8
     passwordChars: '0-9a-zA-Z'
     sender: 'Cms <Cms@netta.cz>'
-
-tracyPlugin:
-    cookie: t8uzf6g54dr8
+    tracy:
+        cookie: t8uzf6g54dr8
 
 tracy:
 #    email: 'email@example.com'
