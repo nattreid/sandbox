@@ -3,6 +3,7 @@
 namespace App\FrontModule\Presenters;
 
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
+use NAttreid\GoogleApi\IGoogleApiFactory;
 use NAttreid\WebManager\Services\PageService;
 use Nette\Utils\Strings;
 use WebLoader\Nette\CssLoader;
@@ -89,13 +90,19 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$this->pageService = $pageService;
 	}
 
-	protected function createComponentHeaderHooks()
+	/* ###################################################################### */
+	/*                              Google Api                                */
+
+	/** @var IGoogleApiFactory */
+	private $googleApiFactory;
+
+	public function injectGoogleApiFactory(IGoogleApiFactory $googleApiFactory)
 	{
-		return $this->pageService->createHeader();
+		$this->googleApiFactory = $googleApiFactory;
 	}
 
-	protected function createComponentFooterHooks()
+	protected function createComponentGoogleApi()
 	{
-		return $this->pageService->createFooter();
+		return $this->googleApiFactory->create();
 	}
 }

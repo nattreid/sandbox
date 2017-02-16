@@ -34,6 +34,7 @@ extensions:
     - NAttreid\Form\DI\FormExtension
     - IPub\FlashMessages\DI\FlashMessagesExtension
     - NAttreid\Tracking\DI\TrackingExtension
+    - NAttreid\GoogleApi\DI\GoogleApiExtension
 
 webManager:
     homepage: 'Homepage:default'
