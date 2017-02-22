@@ -11,6 +11,7 @@ use NAttreid\Latte\TemplateTrait;
 use NAttreid\Security\User;
 use NAttreid\Utils\Date;
 use NAttreid\Utils\Number;
+use Nette\Application\UI\Presenter;
 use Nextras\Application\UI\SecuredLinksPresenterTrait;
 use WebChemistry\Images\TPresenter;
 
@@ -21,7 +22,7 @@ use WebChemistry\Images\TPresenter;
  *
  * @author Attreid <attreid@gmail.com>
  */
-abstract class BasePresenter extends \Nette\Application\UI\Presenter
+abstract class BasePresenter extends Presenter
 {
 
 	use TPresenter,
