@@ -27,7 +27,7 @@ class FrontRouter extends Router
 	{
 		$routes = $this->getRouter('Front');
 
-		$routes[] = new Route($this->getUrl() . 'sitemap.xml', 'Feed:sitemap');
+		$routes[] = new Route($this->url . 'sitemap.xml', 'Feed:sitemap');
 
 		$this->pageService->createRoute($routes, $this->url);
 	}
