@@ -1,11 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\Presenters;
 
 use App\Services\IConfigurator;
 use IPub\FlashMessages\TFlashMessages;
+use Kdyby\Translation\Phrase;
 use Kdyby\Translation\Translator;
 use NAttreid\Cms\Configurator\Configurator;
 use NAttreid\Form\Factories\FormFactory;
@@ -73,7 +74,7 @@ abstract class BasePresenter extends Presenter
 	/**
 	 * Translates the given string.
 	 *
-	 * @param string $message The message id
+	 * @param string|Phrase $message The message id
 	 * @param integer $count The number to use to find the indice of the message
 	 * @param array $parameters An array of parameters for the message
 	 * @param string $domain The domain for the message
@@ -81,7 +82,7 @@ abstract class BasePresenter extends Presenter
 	 *
 	 * @return string
 	 */
-	protected function translate($message, $count = null, array $parameters = [], $domain = null, $locale = null)
+	protected function translate($message, int $count = null, array $parameters = [], string $domain = null, string $locale = null): string
 	{
 		return $this->translator->translate($message, $count, $parameters, $domain, $locale);
 	}

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\FrontModule\Router;
 
@@ -19,7 +19,7 @@ class FrontRouter extends Router
 	/** @var PageService */
 	private $pageService;
 
-	public function __construct($url, PageService $pageService)
+	public function __construct(string $url, PageService $pageService)
 	{
 		parent::__construct($url);
 		$this->pageService = $pageService;

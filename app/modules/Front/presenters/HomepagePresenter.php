@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
@@ -23,7 +23,7 @@ class HomepagePresenter extends BasePresenter
 		$this->pageService = $pageService;
 	}
 
-	public function actionPage($url)
+	public function actionPage(string $url)
 	{
 		$page = $this->pageService->getPage($url);
 		$this->template->page = $page;
