@@ -1,10 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
+use NAttreid\CookiePolicy\CookiePolicy;
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
+use NAttreid\GoogleApi\GoogleApi;
 use NAttreid\GoogleApi\IGoogleApiFactory;
 use NAttreid\WebManager\Services\PageService;
 use Nette\Utils\Strings;
@@ -43,13 +45,13 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	}
 
 	/** @return CssLoader */
-	protected function createComponentCss()
+	protected function createComponentCss(): CssLoader
 	{
 		return $this->webLoader->createCssLoader('front');
 	}
 
 	/** @return JavaScriptLoader */
-	protected function createComponentJs()
+	protected function createComponentJs(): JavaScriptLoader
 	{
 		return $this->webLoader->createJavaScriptLoader('front', 'front' . Strings::firstUpper($this->locale));
 	}
@@ -65,7 +67,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$this->cookiePolicyFactory = $cookiePolicyFactory;
 	}
 
-	protected function createComponentCookiePolicy()
+	protected function createComponentCookiePolicy(): CookiePolicy
 	{
 		$control = $this->cookiePolicyFactory->create();
 
@@ -103,7 +105,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		$this->googleApiFactory = $googleApiFactory;
 	}
 
-	protected function createComponentGoogleApi()
+	protected function createComponentGoogleApi(): GoogleApi
 	{
 		return $this->googleApiFactory->create();
 	}
