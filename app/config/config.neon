@@ -3,7 +3,7 @@ parameters:
         sessionExpiration: '14 days'
 
 application:
-    errorPresenter: Error
+    errorPresenter: Front:Error
     mapping:
         *: App\*Module\Presenters\*Presenter
 
