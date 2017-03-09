@@ -4,15 +4,30 @@ declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
+use NAttreid\Cms\LocaleService;
 use Nette\Application\BadRequestException;
 use Nette\Application\Request;
 
 class Error4xxPresenter extends BasePresenter
 {
 
+	/** @var LocaleService */
+	private $localeService;
+
+	public function __construct(LocaleService $localeService)
+	{
+		parent::__construct();
+		$this->localeService = $localeService;
+	}
+
 	public function startup()
 	{
-		$this->locale = $this->getRequest()->getParameter('request')->getParameter('locale');
+		if (($request = $this->getRequest()->getParameter('request'))) {
+			$this->locale = $request->getParameter('locale');
+		} else {
+			$this->locale = $this->localeService->default;
+		}
+
 		parent::startup();
 		if (!$this->getRequest()->isMethod(Request::FORWARD)) {
 			$this->error();
