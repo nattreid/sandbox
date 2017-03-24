@@ -91,7 +91,7 @@ gulp.task('images', function () {
 
 gulp.task('tracking', function () {
     return gulp.src([
-        paths.dev + 'tracking/assets/nTracker.min.js'
+        paths.dev + 'nattreid-tracking/assets/nTracker.min.js'
     ])
         .pipe(gulp.dest(paths.production.js));
 });
@@ -112,8 +112,8 @@ gulp.task('ckeditor', function () {
 
 gulp.task('kcfinder', function () {
     gulp.src([
-        paths.dev + 'kcfinder/**/*',
-        '!' + paths.dev + 'kcfinder/conf/config.php'
+        paths.dev + 'attreid-kcfinder/**/*',
+        '!' + paths.dev + 'attreid-kcfinder/conf/config.php'
     ])
         .pipe(gulp.dest(paths.production.kcfinder));
 });
