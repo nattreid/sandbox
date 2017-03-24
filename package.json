@@ -1,13 +1,13 @@
 {
-  "name": "netta",
-  "description": "Web application with CMS",
+  "name": "nattreid-sandbox",
+  "description": "Web application with CMS (sandbox)",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git@git.newtravel.cz:nattreid/netta.git"
+    "url": "git@github.com:nattreid/sandbox.git"
   },
   "author": "Attreid",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",

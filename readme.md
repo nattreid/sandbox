@@ -1,4 +1,4 @@
-# Webové stránky s administrací
+# Webové stránky s administrací (sandbox)
 
 ## Instalace
 Je třeba mít nainstalované balíčky **npm** a **node.js**
@@ -16,7 +16,7 @@ A poté stačí jen spustit **bin/install.sh**
 anebo můžete manuálně stáhnout [Composer](http://doc.nette.org/composer) a poté spustit následující
 ```bash
 cd nazevProjektu
-composer create-project nattreid/netta --repository-url=https://packages.newtravel.cz
+composer create-project nattreid/sandbox
 npm install
 bower install
 gulp

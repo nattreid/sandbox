@@ -2,24 +2,24 @@ parameters:
     security:
         salt: rt564kjh6uz9c
     front:
-        url: '//netta/'
+        url: '//sandbox/'
 
 extensions:
 
 dbal:
     driver: mysqli
     host: 127.0.0.1
-    database: netta
-    username: netta
+    database: sandbox
+    username: sandbox
     password: 
 
 mailing:
-    sender: 'Info <info@netta.cz>'
+    sender: 'Info <info@sandbox.cz>'
 
 cms:
     minPasswordLength: 8
     passwordChars: '0-9a-zA-Z'
-    sender: 'Cms <Cms@netta.cz>'
+    sender: 'Cms <Cms@sandbox.cz>'
     tracy:
         cookie: t8uzf6g54dr8
 
@@ -28,5 +28,5 @@ tracy:
 
 appManager:
     deploy:
-        projectUrl: 'git@git.newtravel.cz:attreid/netta.git'
+        projectUrl: 'git@github.com:nattreid/sandbox.git'
         secretToken: 'xxxxxxxxxxxx'

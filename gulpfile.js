@@ -58,7 +58,7 @@ gulp.task('jsFrontCs', function () {
 gulp.task('cssFront', function () {
     return gulp.src([
         paths.dev + 'jquery-ui/themes/base/jquery-ui.css',
-        paths.dev + 'cookiepolicy/assets/cookiePolicy.less'
+        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.less'
     ])
         .pipe(less())
         .pipe(concat('front.min.css'))
@@ -80,7 +80,7 @@ gulp.task('fonts', function () {
 // *********************************  Images  **********************************
 
 gulp.task('images', function () {
-    gulp.src(paths.dev + 'filemanager/assets/images/icons.png')
+    gulp.src(paths.dev + 'nattreid-file-manager/assets/images/icons.png')
         .pipe(gulp.dest(paths.production.images + 'fileManager'));
     gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
         .pipe(gulp.dest(paths.production.images + 'cms/jquery-ui'));
@@ -119,7 +119,7 @@ gulp.task('kcfinder', function () {
 });
 
 // *****************************************************************************
-// **********************************  Clean  **********************************
+// *******************************  Maintenance  *******************************
 
 gulp.task('on', function (cb) {
     del(paths.production.temp + 'maintenance', cb);
