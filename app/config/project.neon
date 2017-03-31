@@ -1,32 +1,36 @@
 parameters:
-    security:
-        salt: rt564kjh6uz9c
-    front:
-        url: '//sandbox/'
+	security:
+		salt: rt564kjh6uz9c
+	front:
+		url: '//sandbox/'
 
 extensions:
 
 dbal:
-    driver: mysqli
-    host: 127.0.0.1
-    database: sandbox
-    username: sandbox
-    password: 
+	driver: mysqli
+	host: 127.0.0.1
+	database: sandbox
+	username: sandbox
+	password:
 
 mailing:
-    sender: 'Info <info@sandbox.cz>'
+	sender: 'Info <info@sandbox.cz>'
 
 cms:
-    minPasswordLength: 8
-    passwordChars: '0-9a-zA-Z'
-    sender: 'Cms <Cms@sandbox.cz>'
-    tracy:
-        cookie: t8uzf6g54dr8
+	minPasswordLength: 8
+	passwordChars: '0-9a-zA-Z'
+	sender: 'Cms <Cms@sandbox.cz>'
+
+	assets:
+		- {files: ["*.js", "*.css", "*.less"], from: %appDir%/cms}
+
+	tracy:
+		cookie: t8uzf6g54dr8
 
 tracy:
 #    email: 'email@example.com'
 
 appManager:
-    deploy:
-        projectUrl: 'git@github.com:nattreid/sandbox.git'
-        secretToken: 'xxxxxxxxxxxx'
+	deploy:
+		projectUrl: 'git@github.com:nattreid/sandbox.git'
+		secretToken: 'xxxxxxxxxxxx'
