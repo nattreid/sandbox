@@ -4,8 +4,6 @@ parameters:
 	front:
 		url: '//sandbox/'
 
-extensions:
-
 dbal:
 	driver: mysqli
 	host: 127.0.0.1
