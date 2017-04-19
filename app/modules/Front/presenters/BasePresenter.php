@@ -22,7 +22,7 @@ use WebLoader\Nette\LoaderFactory;
 abstract class BasePresenter extends \App\Presenters\BasePresenter
 {
 
-	protected function beforeRender()
+	protected function beforeRender(): void
 	{
 		parent::beforeRender();
 		$this->template->baseKeywords = $this->configurator->keywords;
@@ -39,7 +39,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	/** @var LoaderFactory */
 	private $webLoader;
 
-	public function injectWebLoader(LoaderFactory $webLoader)
+	public function injectWebLoader(LoaderFactory $webLoader): void
 	{
 		$this->webLoader = $webLoader;
 	}
@@ -62,7 +62,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	/** @var ICookiePolicyFactory */
 	private $cookiePolicyFactory;
 
-	public function injectCookiePolicyFactory(ICookiePolicyFactory $cookiePolicyFactory)
+	public function injectCookiePolicyFactory(ICookiePolicyFactory $cookiePolicyFactory): void
 	{
 		$this->cookiePolicyFactory = $cookiePolicyFactory;
 	}
@@ -89,7 +89,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	/** @var PageService */
 	private $pageService;
 
-	public function injectWebManagerService(PageService $pageService)
+	public function injectWebManagerService(PageService $pageService): void
 	{
 		$this->pageService = $pageService;
 	}
@@ -100,7 +100,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	/** @var IGoogleApiFactory */
 	private $googleApiFactory;
 
-	public function injectGoogleApiFactory(IGoogleApiFactory $googleApiFactory)
+	public function injectGoogleApiFactory(IGoogleApiFactory $googleApiFactory): void
 	{
 		$this->googleApiFactory = $googleApiFactory;
 	}

@@ -36,13 +36,13 @@ abstract class BasePresenter extends Presenter
 		TemplateTrait,
 		SecuredLinksPresenterTrait;
 
-	protected function startup()
+	protected function startup(): void
 	{
 		parent::startup();
 		$this->initLocale();
 	}
 
-	protected function beforeRender()
+	protected function beforeRender(): void
 	{
 		parent::beforeRender();
 		$this->redrawFlashMessages();
@@ -54,7 +54,7 @@ abstract class BasePresenter extends Presenter
 	/** @var IConfigurator */
 	protected $configurator;
 
-	public function injectConfigurator(Configurator $configurator)
+	public function injectConfigurator(Configurator $configurator): void
 	{
 		$this->configurator = $configurator;
 	}
@@ -68,7 +68,7 @@ abstract class BasePresenter extends Presenter
 	/** @var Translator */
 	protected $translator;
 
-	public function injectTranslator(Translator $translator)
+	public function injectTranslator(Translator $translator): void
 	{
 		$this->translator = $translator;
 	}
@@ -89,7 +89,7 @@ abstract class BasePresenter extends Presenter
 		return $this->translator->translate($message, $count, $parameters, $domain, $locale);
 	}
 
-	private function initLocale()
+	private function initLocale(): void
 	{
 		if (empty($this->locale)) {
 			$this->locale = $this->translator->getDefaultLocale();
@@ -116,7 +116,7 @@ abstract class BasePresenter extends Presenter
 	 * @param IControl $flashMessagesFactory
 	 * @param FlashNotifier $flashNotifier
 	 */
-	public function injectFlashMessages(IControl $flashMessagesFactory, FlashNotifier $flashNotifier, IStorage $flashStorage)
+	public function injectFlashMessages(IControl $flashMessagesFactory, FlashNotifier $flashNotifier, IStorage $flashStorage): void
 	{
 		$this->flashMessagesFactory = $flashMessagesFactory;
 		$this->flashNotifier = $flashNotifier;
@@ -150,7 +150,7 @@ abstract class BasePresenter extends Presenter
 		return $this->flashMessagesFactory->create();
 	}
 
-	private function redrawFlashMessages()
+	private function redrawFlashMessages(): void
 	{
 		if ($this->isAjax()) {
 			/* @var $messages Message[] */
@@ -170,7 +170,7 @@ abstract class BasePresenter extends Presenter
 	/** @var FormFactory */
 	protected $formFactory;
 
-	public function injectFormFactory(FormFactory $formFactory)
+	public function injectFormFactory(FormFactory $formFactory): void
 	{
 		$this->formFactory = $formFactory;
 	}

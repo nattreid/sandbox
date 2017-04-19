@@ -25,7 +25,7 @@ class FrontRouter extends Router
 		$this->pageService = $pageService;
 	}
 
-	public function createRoutes()
+	public function createRoutes(): void
 	{
 		$routes = $this->getRouter('Front');
 

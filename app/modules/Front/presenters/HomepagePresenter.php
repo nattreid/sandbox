@@ -23,7 +23,7 @@ class HomepagePresenter extends BasePresenter
 		$this->pageService = $pageService;
 	}
 
-	public function actionPage(string $url)
+	public function actionPage(string $url): void
 	{
 		$page = $this->pageService->getPage($url);
 		$this->template->page = $page;

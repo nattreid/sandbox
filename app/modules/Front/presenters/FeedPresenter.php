@@ -26,7 +26,7 @@ class FeedPresenter extends BasePresenter
 	/**
 	 * Vytvoreni sitemap.xml
 	 */
-	public function renderSitemap()
+	public function renderSitemap(): void
 	{
 		$links = [
 			$this->link('//:Front:Homepage:')

@@ -20,7 +20,7 @@ class Error4xxPresenter extends BasePresenter
 		$this->localeService = $localeService;
 	}
 
-	public function startup()
+	public function startup(): void
 	{
 		if (($request = $this->getRequest()->getParameter('request'))) {
 			$this->locale = $request->getParameter('locale');
@@ -34,7 +34,7 @@ class Error4xxPresenter extends BasePresenter
 		}
 	}
 
-	public function renderDefault(BadRequestException $exception)
+	public function renderDefault(BadRequestException $exception): void
 	{
 		// load template 403.latte or 404.latte or ... 4xx.latte
 		$file = __DIR__ . "/templates/Error/{$exception->getCode()}.latte";
