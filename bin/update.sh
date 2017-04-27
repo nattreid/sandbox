@@ -6,8 +6,12 @@ ROOT_FOLDER=$(dirname $DIR)
 DEFAULT_PWD=$PWD
 
 cd ${ROOT_FOLDER}
+gulp off
 git checkout -- app/
 git checkout -- bin/
 git pull
-rm temp/cache/* -rf
-rm www/webtemp/* -rf
+composer update
+bower update
+gulp clean
+gulp
+gulp on
