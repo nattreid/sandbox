@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\FrontModule\Presenters;
 
+use NAttreid\WebManager\Model\Pages\Page;
 use NAttreid\WebManager\Services\PageService;
 
 /**
@@ -17,6 +18,9 @@ class HomepagePresenter extends BasePresenter
 	/** @var PageService */
 	private $pageService;
 
+	/** @var Page */
+	private $page;
+
 	public function __construct(PageService $pageService)
 	{
 		parent::__construct();
@@ -25,8 +29,11 @@ class HomepagePresenter extends BasePresenter
 
 	public function actionPage(?string $url): void
 	{
-		$page = $this->pageService->getPage($url);
-		$this->template->page = $page;
+		$this->page = $this->pageService->getPage($url);
 	}
 
+	public function renderPage(): void
+	{
+		$this->template->page = $this->page;
+	}
 }
