@@ -8,7 +8,7 @@
           content="{ifset viewport}{include viewport|striptags|strip}{else}width=device-width,initial-scale=1{/ifset}">
 
     <title>{ifset title}{include title|striptags|strip} | {/ifset}{$baseTitle}</title>
-    <meta name="og:title" n:ifset="title" content="{include title|striptags|strip}"/>
+    <meta name="og:title" n:ifset="title" content="{include title|striptags|strip} | {$baseTitle}"/>
     <meta name="og:site_name" content="{$baseTitle}"/>
 
     <meta name="description"

@@ -3,5 +3,5 @@
 {block ogImage}{$page->image}{/block}
 
 {block content}
-<h1 n:block="title">{$page->title}</h1>
+<h1 n:if="$page->title" n:block="title">{$page->title}</h1>
 {$page->content|noescape}
