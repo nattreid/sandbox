@@ -1,5 +1,36 @@
 <?php
 
+$path = __DIR__ . '/../../../';
+require_once $path . 'vendor/autoload.php';
+
+// prava pro temp atd
+umask(0);
+
+$configurator = new Nette\Configurator;
+
+//$configurator->setDebugMode('23.75.345.200'); // enable for your remote IP
+$configurator->enableDebugger($path . 'log');
+
+$configurator->setTimeZone('Europe/Prague');
+$configurator->setTempDirectory($path . 'temp');
+
+$configurator->createRobotLoader()
+	->addDirectory($path . 'app/')
+	->register();
+
+$configurator->addConfig($path . 'app/config/config.neon');
+$configurator->addConfig($path . 'app/config/project.neon');
+$configurator->addConfig($path . 'app/config/config.local.neon');
+
+$configurator->addParameters([
+	'logDir' => $path . 'log',
+	'sessionDir' => $path . 'temp/sessions',
+	'wwwDir' => $path . 'www',
+	'appDir' => $path . 'app'
+]);
+
+$container = $configurator->createContainer();
+
 /** This file is part of KCFinder project
  *
  * @desc Base configuration file
@@ -15,7 +46,7 @@
   even if you are using session configuration.
   See http://kcfinder.sunhater.com/install for setting descriptions */
 
-$_CONFIG = array(
+$config = array(
 // GENERAL SETTINGS
 
 	'disabled' => true,
@@ -36,8 +67,8 @@ $_CONFIG = array(
 	'imageDriversPriority' => "imagick gmagick gd",
 	'jpegQuality' => 70,
 	'thumbsDir' => ".thumbs",
-	'maxImageWidth' => 800,
-	'maxImageHeight' => 800,
+	'maxImageWidth' => 1200,
+	'maxImageHeight' => 1200,
 	'thumbWidth' => 100,
 	'thumbHeight' => 100,
 	'watermark' => "",
@@ -77,56 +108,22 @@ $_CONFIG = array(
 	'cookiePath' => "",
 	'cookiePrefix' => 'KCFINDER_',
 // THE FOLLOWING SETTINGS CANNOT BE OVERRIDED WITH SESSION SETTINGS
-	'_normalizeFilenames' => false,
-	'_check4htaccess' => true,
-	//'_tinyMCEPath' => "/tiny_mce",
 	'_sessionVar' => "KCFINDER",
-	//'_sessionLifetime' => 30,
-	//'_sessionDir' => "/full/directory/path",
-	//'_sessionDomain' => ".mysite.com",
-	//'_sessionPath' => "/my/path",
+	'_check4htaccess' => true,
+	'_normalizeFilenames' => false,
+	'_dropUploadMaxFilesize' => 10485760,
+	//'_tinyMCEPath' => "/tiny_mce",
 	//'_cssMinCmd' => "java -jar /path/to/yuicompressor.jar --type css {file}",
 	//'_jsMinCmd' => "java -jar /path/to/yuicompressor.jar --type js {file}",
 );
 
-$path = __DIR__ . '/../../../';
-require_once $path . 'vendor/autoload.php';
-
-// prava pro temp atd
-umask(0);
-
-$configurator = new Nette\Configurator;
-
-//$configurator->setDebugMode('23.75.345.200'); // enable for your remote IP
-$configurator->enableDebugger($path . 'log');
-
-$configurator->setTimeZone('Europe/Prague');
-$configurator->setTempDirectory($path . 'temp');
-
-$configurator->createRobotLoader()
-	->addDirectory($path . 'app/')
-	->register();
-
-$configurator->addConfig($path . 'app/config/config.neon');
-$configurator->addConfig($path . 'app/config/project.neon');
-$configurator->addConfig($path . 'app/config/config.local.neon');
-
-$configurator->addParameters([
-	'logDir' => $path . 'log',
-	'sessionDir' => $path . 'temp/sessions',
-	'wwwDir' => $path . 'www',
-	'appDir' => $path . 'app'
-]);
-
-$container = $configurator->createContainer();
-
 $resource = 'cms.KCFinder';
 $user = $container->getService('user');
 $user->getStorage()->setNamespace('cms');
-$_CONFIG['disabled'] = !$user->isAllowed($resource, 'view');
+$config['disabled'] = !$user->isAllowed($resource, 'view');
 
 if ($user->isAllowed($resource, 'edit')) {
-	$_CONFIG['access'] = array(
+	$config['access'] = array(
 		'files' => array(
 			'upload' => true,
 			'delete' => true,
@@ -141,3 +138,5 @@ if ($user->isAllowed($resource, 'edit')) {
 		)
 	);
 }
+
+return $config;
