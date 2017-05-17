@@ -40,7 +40,7 @@
     "joseki/webloader-filters": "~1.1",
     "oyejorge/less.php": "~1.7",
     "webchemistry/images": "~2.1",
-    "attreid/translation": "~2.4"
+    "kdyby/translation": "~2.4"
   },
   "require-dev": {
     "nette/tester": "^1.7",
