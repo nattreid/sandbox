@@ -35,7 +35,7 @@ class FeedPresenter extends BasePresenter
 		// staticke stranky
 		$pages = $this->pageService->findPages();
 		foreach ($pages as $page) {
-			$links[] = $this->link('//:Front:Homepage:page', $page->url);
+			$links[] = $page->link;
 		}
 
 		$this->template->links = $links;
