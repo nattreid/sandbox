@@ -1,0 +1,19 @@
+4xx:
+    title: "Oh nein…"
+    message: "Ihr Browser hat einen Antrag gesendet, den unser Server nicht verstehen oder nicht verarbeiten kann."
+403:
+    title: "Zugriff abgelehnt"
+    name: "Fehler 403"
+    message: "Sie haben keine Berechtigung diese Seite anzusehen. Bitte kontaktieren Sie den Administrator, falls Sie glauben, dass Ihnen die Seite angezeigt werden sollte."
+404:
+    title: "Die Seite wurde nicht gefunden"
+    name: "Fehler 404"
+    message: "Die Seite konnte nicht gefunden werden. Es ist möglich, dass die Adresse nicht korrekt ist oder sie existiert nicht mehr."
+405:
+    title: "Die Methode ist nicht erlaubt"
+    name: "Fehler 405"
+    message: "Die anforderte Methode ist für diesen URL nicht erlaubt."
+410:
+    title: "Die Seite wurde nicht gefunden."
+    name: "Fehler 410"
+    message: "Die angeforderte Seite konnte aus dem Web runtergenommen. Bitte entschuldigen Sie uns wegen der Ungenehmlichkeiten."
