@@ -52,7 +52,7 @@ images:
 
 forms:
     messages:
-        PROTECTION: 'form.protection'
+        '\Nette\Forms\Controls\CsrfProtection::PROTECTION': 'form.protection'
         EQUAL: 'form.equal'
         NOT_EQUAL: 'form.notEqual'
         FILLED: 'form.filled'
@@ -74,6 +74,7 @@ forms:
         '\Nette\Forms\Controls\SelectBox::VALID': 'form.option'
         '\Nette\Forms\Controls\UploadControl::VALID': 'form.fileUpload'
         '\NAttreid\Form\Rules::PHONE': 'form.phone'
+        '\NAttreid\Form\Control\ImageUpload\Preview::DELETE': 'form.delete'
 
 webloader:
     debugger: false
