@@ -39,7 +39,7 @@
     "attreid/webloader": "~2.5",
     "joseki/webloader-filters": "~1.1",
     "oyejorge/less.php": "~1.7",
-    "webchemistry/images": "~2.1",
+    "nattreid/image-storage": "~1.0",
     "kdyby/translation": "~2.4"
   },
   "require-dev": {

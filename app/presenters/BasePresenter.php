@@ -14,13 +14,13 @@ use IPub\FlashMessages\Storage\IStorage;
 use Kdyby\Translation\Translator;
 use NAttreid\Cms\Configurator\Configurator;
 use NAttreid\Form\Factories\FormFactory;
+use NAttreid\ImageStorage\TraitImagePresenter;
 use NAttreid\Latte\TemplateTrait;
 use NAttreid\Security\User;
 use NAttreid\Utils\Date;
 use NAttreid\Utils\Number;
 use Nette\Application\UI\Presenter;
 use Nextras\Application\UI\SecuredLinksPresenterTrait;
-use WebChemistry\Images\TPresenter;
 
 /**
  * Class BasePresenter
@@ -32,7 +32,7 @@ use WebChemistry\Images\TPresenter;
 abstract class BasePresenter extends Presenter
 {
 
-	use TPresenter,
+	use TraitImagePresenter,
 		TemplateTrait,
 		SecuredLinksPresenterTrait;
 

@@ -17,7 +17,7 @@ tracy:
 
 extensions:
     router: NAttreid\Routing\DI\RoutingExtension
-    images: WebChemistry\Images\DI\Extension
+    images: NAttreid\ImageStorage\DI\ImageStorageExtension
     mailing: NAttreid\Mailing\DI\MailingExtension
     webloader: WebLoader\Nette\Extension
     dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
@@ -46,9 +46,7 @@ router:
         - App\FrontModule\Router\FrontRouter(%front.url%)
 
 images:
-    wwwDir: %wwwDir%
-    assetsDir: 'assets'
-    defaultImage: 'default/default.png'
+    noImage: 'default/default.png'
 
 forms:
     messages:

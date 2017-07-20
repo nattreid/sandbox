@@ -28,10 +28,10 @@
 /www/kcfinder/conf/*
 !/www/kcfinder/conf/config.php
 
-/www/assets/*
-!/www/assets/default
-/www/assets/default/*
-!/www/assets/default/original
+/assets/*
+!/assets/default
+
+/www/assets
 
 /bin/backup
 
