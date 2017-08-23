@@ -7,16 +7,16 @@
     <meta name="viewport"
           content="{ifset viewport}{include viewport|striptags|strip}{else}width=device-width,initial-scale=1{/ifset}">
 
-    <title>{ifset title}{include title|striptags|strip} | {/ifset}{$baseTitle}</title>
-    <meta name="og:title" n:ifset="title" content="{include title|striptags|strip} | {$baseTitle}"/>
-    <meta name="og:site_name" content="{$baseTitle}"/>
+    <title>{ifset title}{include title|striptags|strip} | {/ifset}{$configurator->title}</title>
+    <meta name="og:title" n:ifset="title" content="{include title|striptags|strip} | {$configurator->title}"/>
+    <meta name="og:site_name" content="{$configurator->title}"/>
 
     <meta name="description"
-          content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
+          content="{ifset description}{include description|striptags|strip}{else}{$configurator->description}{/ifset}"/>
     <meta name="og:description"
-          content="{ifset description}{include description|striptags|strip}{else}{$baseDescription}{/ifset}"/>
+          content="{ifset description}{include description|striptags|strip}{else}{$configurator->description}{/ifset}"/>
 
-    <meta name="keywords" content="{ifset keywords}{include keywords|strip}{else}{$baseKeywords}{/ifset}"/>
+    <meta name="keywords" content="{ifset keywords}{include keywords|strip}{else}{$configurator->keywords}{/ifset}"/>
 
     <meta property="og:type" content="{ifset ogType}{include ogType|striptags|strip}{else}website{/ifset}"/>
 
