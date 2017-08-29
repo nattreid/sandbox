@@ -80,7 +80,7 @@ webloader:
 appManager:
     sessionExpiration: %security.sessionExpiration%
     backupDir:
-        - %wwwDir%/assets
+        - %appDir%/../assets
         - %wwwDir%/upload
 
 console:
