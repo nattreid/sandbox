@@ -11,11 +11,15 @@
 	# RewriteBase /
 
 	# use HTTPS
-	# RewriteCond %{HTTPS} !on
-	# RewriteRule .? https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # RewriteCond %{HTTPS} !on
+    # RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    # RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,QSA,NE]
 
 	# prevents files starting with dot to be viewed by browser
 	RewriteRule /\.|^\.(?!well-known/) - [F]
+
+    # RewriteCond %{HTTP_HOST} ^sandbox\.cz
+    # RewriteRule ^(.*)$ http://www.sandbox.cz/$1 [R=permanent,L]
 
 	# front controller
 	RewriteCond %{REQUEST_FILENAME} !-f

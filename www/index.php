@@ -9,6 +9,10 @@ if (file_exists(__DIR__ . '/../temp/maintenance')) {
 	require '.maintenance.php';
 }
 
+if (!empty($_SERVER['HTTPS']) && 'off' !== $_SERVER['HTTPS']) {
+	$_SERVER['SERVER_PORT'] = 443;
+}
+
 $container = require __DIR__ . '/../app/bootstrap.php';
 
 $container->getByType(Nette\Application\Application::class)->run();

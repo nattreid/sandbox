@@ -1,0 +1,8 @@
+RewriteEngine On
+#use HTTPS
+#RewriteCond %{HTTPS} !on
+#RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,QSA,NE]
+
+RewriteRule ^$ www/ [L]
+RewriteRule (.*) www/$1 [L]
