@@ -1,0 +1,19 @@
+﻿4xx:
+	title: "Fíha..."
+	message: "Váš prehliadač poslal žiadosť, ktorej tento server nerozumie alebo ju nevie  spracovať."
+403:
+	title: "Prístup zamietnutý"
+	name: "chyba 403"
+	message: "Nemáte oprávnenie na zhliadnutie tejto stránky. Prosím, obráťte sa na správcu webu, pokiaľ si myslíte, že se vám má stránka zobraziť."
+404:
+	title: "Stránka nebola nájdená"
+	name: "chyba 404"
+	message: "Požadovaná stránka nebola nájdené. Je možné, že adresa nieje  správna, alebo že stránka už neexistuje."
+405:
+	title: "Metóda nieje povolená"
+	name: "chyba 405"
+	message: "Požadovaná metóda nieje povolená pre túto URL."
+410:
+	title: "Stránka nebola nájdená"
+	name: "chyba 410"
+	message: "Požadovaná stránka bola stiahnutá z webu. Ospravedlňujeme sa za nepríjemnosti."
