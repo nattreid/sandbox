@@ -1,0 +1,19 @@
+﻿4xx:
+	title: "Hups..."
+	message: "Twoja przegłądarka wysłała żądanie, któremu nasz serwer nie rozumie, lub nie umie przetworzyć."
+403:
+	title: "Dostęp zabroniony"
+	name: "błąd 403"
+	message: "Nie masz uprawnienia do tej strony. Proszę się skontaktować z administratorem sieci, jeśli myślisz, że strona powinna się pojawić."
+404:
+	title: "Strona nieznaleziona"
+	name: "błąd 404"
+	message: "Strona nie była znaleziona. Możliwe, że adres nie jest poprawny, lub strona już nie istnieje."
+405:
+	title: "Niedozwolona metoda"
+	name: "błąd 405"
+	message: "Wybrana metoda nie jest dozwolona dla tej URL."
+410:
+	title: "Strona nieznaleziona"
+	name: "błąd 410"
+	message: "Strona została zniesiona z webu. Przepraszamy za niedogodności."
