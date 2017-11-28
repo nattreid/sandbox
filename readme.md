@@ -15,8 +15,8 @@ A poté stačí jen spustit **bin/install.sh**
 
 anebo můžete manuálně stáhnout [Composer](http://doc.nette.org/composer) a poté spustit následující
 ```bash
-cd nazevProjektu
 composer create-project nattreid/sandbox
+cd nazevProjektu
 npm install
 bower install
 gulp
