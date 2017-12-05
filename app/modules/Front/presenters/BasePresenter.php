@@ -48,7 +48,9 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		return $this->webLoader->createCssLoader('front');
 	}
 
-	/** @return JavaScriptLoader */
+	/** @return JavaScriptLoader
+	 * @throws \WebLoader\InvalidArgumentException
+	 */
 	protected function createComponentJs(): JavaScriptLoader
 	{
 		return $this->webLoader->createJavaScriptLoader('front', 'front' . Strings::firstUpper($this->locale));

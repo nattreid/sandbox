@@ -6,6 +6,7 @@ namespace App\FrontModule\Presenters;
 
 use NAttreid\WebManager\Model\Pages\Page;
 use NAttreid\WebManager\Services\PageService;
+use Nette\Application\BadRequestException;
 
 /**
  * Homepage presenter.
@@ -27,6 +28,10 @@ class HomepagePresenter extends BasePresenter
 		$this->pageService = $pageService;
 	}
 
+	/**
+	 * @param null|string $url
+	 * @throws BadRequestException
+	 */
 	public function actionPage(?string $url): void
 	{
 		$this->page = $this->pageService->getPage($url);

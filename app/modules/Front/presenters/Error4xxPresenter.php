@@ -20,6 +20,9 @@ class Error4xxPresenter extends BasePresenter
 		$this->localeService = $localeService;
 	}
 
+	/**
+	 * @throws BadRequestException
+	 */
 	public function startup(): void
 	{
 		if (($request = $this->getRequest()->getParameter('request'))) {
