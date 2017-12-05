@@ -27,6 +27,15 @@ var paths = {
 // *****************************************************************************
 // ************************************  JS  ***********************************
 
+var locale = {
+    'cs': [
+        paths.dev + 'jquery-ui/ui/i18n/datepicker-cs.js'
+    ],
+    'en': [
+        paths.dev + 'jquery-ui/ui/i18n/datepicker-en-GB.js'
+    ]
+};
+
 gulp.task('jsFront', function () {
     return gulp.src([
         paths.dev + 'jquery/dist/jquery.js',
@@ -43,11 +52,9 @@ gulp.task('jsFront', function () {
         .pipe(gulp.dest(paths.production.js));
 });
 
-gulp.task('jsFrontCs', function () {
-    return gulp.src([
-        paths.dev + 'jquery-ui/ui/i18n/datepicker-cs.js'
-    ])
-        .pipe(concat('frontCs.min.js'))
+gulp.task('jsFrontLocale', function () {
+    for (var lang in locale) gulp.src(locale[lang])
+        .pipe(concat('front.' + lang + '.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.production.lang));
 });
@@ -156,5 +163,5 @@ gulp.task('clean', function (cb) {
 
 // *****************************************************************************
 
-gulp.task('default', ['cache', 'jsFront', 'jsFrontCs', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
+gulp.task('default', ['cache', 'jsFront', 'jsFrontLocale', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
 

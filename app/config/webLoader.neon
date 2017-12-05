@@ -20,6 +20,12 @@ webloader:
 
         frontCs:
             files:
-                - %wwwDir%/js/i18n/frontCs.min.js
+                - %wwwDir%/js/i18n/front.cs.min.js
+            fileFilters:
+                - @jsMin
+
+        frontEn:
+            files:
+                - %wwwDir%/js/i18n/front.en.min.js
             fileFilters:
                 - @jsMin
