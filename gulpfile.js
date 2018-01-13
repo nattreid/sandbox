@@ -44,7 +44,7 @@ gulp.task('jsFront', function () {
         paths.dev + 'nette.ajax.js/extensions/confirm.ajax.js',
         paths.dev + 'jquery-ui-touch-punch/jquery.ui.touch-punch.js',
         paths.dev + 'nette-live-form-validation/live-form-validation.js',
-        paths.dev + 'utils/assets/utils.js',
+        paths.dev + 'nattreid-utils/assets/utils.js',
         paths.dev + 'history.nette.ajax.js/client-side/history.ajax.js'
     ])
         .pipe(concat('front.min.js'))
