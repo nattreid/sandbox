@@ -1,112 +1,112 @@
 parameters:
-    security:
-        sessionExpiration: '14 days'
+	security:
+		sessionExpiration: '14 days'
 
 application:
-    errorPresenter: Front:Error
-    mapping:
-        *: App\*Module\Presenters\*Presenter
+	errorPresenter: Front:Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
 
 
 session:
-    expiration: %security.sessionExpiration%
-    savePath: %sessionDir%
+	expiration: %security.sessionExpiration%
+	savePath: %sessionDir%
 
 tracy:
-    showLocation: true
+	showLocation: true
 
 extensions:
-    router: NAttreid\Routing\DI\RoutingExtension
-    images: NAttreid\ImageStorage\DI\ImageStorageExtension
-    mailing: NAttreid\Mailing\DI\MailingExtension
-    webloader: WebLoader\Nette\Extension
-    dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
-    orm: Nattreid\Orm\DI\OrmExtension
-    appManager: NAttreid\AppManager\DI\AppManagerExtension
-    console: NAttreid\Console\DI\ConsoleExtension
-    securityExtension: NAttreid\Security\DI\SecurityExtension
-    cms: NAttreid\Cms\DI\CmsExtension
-    webManager: NAttreid\WebManager\DI\WebManagerExtension
-    analytics: NAttreid\Analytics\DI\AnalyticsExtension
+	router: NAttreid\Routing\DI\RoutingExtension
+	images: NAttreid\ImageStorage\DI\ImageStorageExtension
+	mailing: NAttreid\Mailing\DI\MailingExtension
+	webloader: WebLoader\Nette\Extension
+	dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
+	orm: Nattreid\Orm\DI\OrmExtension
+	appManager: NAttreid\AppManager\DI\AppManagerExtension
+	console: NAttreid\Console\DI\ConsoleExtension
+	securityExtension: NAttreid\Security\DI\SecurityExtension
+	cms: NAttreid\Cms\DI\CmsExtension
+	webManager: NAttreid\WebManager\DI\WebManagerExtension
+	analytics: NAttreid\Analytics\DI\AnalyticsExtension
 
-    - Kdyby\Translation\DI\TranslationExtension
-    - NAttreid\Latte\DI\LatteExtension
-    - NAttreid\Form\DI\FormExtension
-    - IPub\FlashMessages\DI\FlashMessagesExtension
-    - NAttreid\Tracking\DI\TrackingExtension
-    - NAttreid\GoogleApi\DI\GoogleApiExtension
+	- Kdyby\Translation\DI\TranslationExtension
+	- NAttreid\Latte\DI\LatteExtension
+	- NAttreid\Form\DI\FormExtension
+	- IPub\FlashMessages\DI\FlashMessagesExtension
+	- NAttreid\Tracking\DI\TrackingExtension
+	- NAttreid\GoogleApi\DI\GoogleApiExtension
 
 webManager:
-    homepage: 'Homepage:default'
-    page: 'Homepage:page'
-    module: 'Front'
+	homepage: 'Homepage:default'
+	page: 'Homepage:page'
+	module: 'Front'
 
 router:
-    routers: 
-        - App\FrontModule\Router\FrontRouter(%front.url%)
+	routers:
+		- App\FrontModule\Router\FrontRouter(%front.url%)
 
 images:
-    noImage: 'default/default.png'
+	noImage: 'default/default.png'
 
 forms:
-    messages:
-        '\Nette\Forms\Controls\CsrfProtection::PROTECTION': 'form.protection'
-        EQUAL: 'form.equal'
-        NOT_EQUAL: 'form.notEqual'
-        FILLED: 'form.filled'
-        BLANK: 'form.blank'
-        MIN_LENGTH: 'form.minLength'
-        MAX_LENGTH: 'form.maxLength'
-        LENGTH: 'form.length'
-        EMAIL: 'form.email'
-        URL: 'form.url'
-        INTEGER: 'form.integer'
-        FLOAT: 'form.float'
-        MIN: 'form.min'
-        MAX: 'form.max'
-        RANGE: 'form.range'
-        MAX_FILE_SIZE: 'form.max_file_size'
-        MAX_POST_SIZE: 'form.max_post_size'
-        MIME_TYPE: 'form.mime_type'
-        IMAGE: 'form.image'
-        '\Nette\Forms\Controls\SelectBox::VALID': 'form.option'
-        '\Nette\Forms\Controls\UploadControl::VALID': 'form.fileUpload'
-        '\NAttreid\Form\Rules::PHONE': 'form.phone'
-        '\NAttreid\Form\Control\ImageUpload\Preview::DELETE': 'form.delete'
+	messages:
+		'\Nette\Forms\Controls\CsrfProtection::PROTECTION': 'form.protection'
+		EQUAL: 'form.equal'
+		NOT_EQUAL: 'form.notEqual'
+		FILLED: 'form.filled'
+		BLANK: 'form.blank'
+		MIN_LENGTH: 'form.minLength'
+		MAX_LENGTH: 'form.maxLength'
+		LENGTH: 'form.length'
+		EMAIL: 'form.email'
+		URL: 'form.url'
+		INTEGER: 'form.integer'
+		FLOAT: 'form.float'
+		MIN: 'form.min'
+		MAX: 'form.max'
+		RANGE: 'form.range'
+		MAX_FILE_SIZE: 'form.max_file_size'
+		MAX_POST_SIZE: 'form.max_post_size'
+		MIME_TYPE: 'form.mime_type'
+		IMAGE: 'form.image'
+		'\Nette\Forms\Controls\SelectBox::VALID': 'form.option'
+		'\Nette\Forms\Controls\UploadControl::VALID': 'form.fileUpload'
+		'\NAttreid\Form\Rules::PHONE': 'form.phone'
+		'\NAttreid\Form\Control\ImageUpload\Preview::DELETE': 'form.delete'
 
 webloader:
-    debugger: false
+	debugger: false
 
 appManager:
-    sessionExpiration: %security.sessionExpiration%
-    backupDir:
-        - %appDir%/../assets
-        - %wwwDir%/upload
+	sessionExpiration: %security.sessionExpiration%
+	backupDir:
+		- %appDir%/../assets
+		- %wwwDir%/upload
 
 console:
-    commands:
-        - App\Console\Run
+	commands:
+		- App\Console\Run
 
 dbal:
-    simpleStorageTz: Europe/Prague
+	simpleStorageTz: Europe/Prague
 
 orm:
-    model: App\Model\Orm
-    add:
-        - NAttreid\Security\Model\Orm
-        - NAttreid\Cms\Model\Orm
-        - NAttreid\Tracking\Model\Orm
-        - NAttreid\WebManager\Model\Orm
+	model: App\Model\Orm
+	add:
+		- NAttreid\Security\Model\Orm
+		- NAttreid\Cms\Model\Orm
+		- NAttreid\Tracking\Model\Orm
+		- NAttreid\WebManager\Model\Orm
 
 cms:
-    layout: '%appDir%/cms/templates/cms.latte'
-    front: ':Front:Homepage:'
-    sessionExpiration: %security.sessionExpiration%
+	layout: '%appDir%/cms/templates/cms.latte'
+	front: ':Front:Homepage:'
+	sessionExpiration: %security.sessionExpiration%
 
 services:
-    lessFilter: WebLoader\Filter\LessFilter
-    cssMin: Joseki\Webloader\CssMinFilter
-    jsMin: Joseki\Webloader\JsMinFilter
+	lessFilter: WebLoader\Filter\LessFilter
+	cssMin: Joseki\Webloader\CssMinFilter
+	jsMin: Joseki\Webloader\JsMinFilter
 
-    - NAttreid\Utils\Hasher(%security.salt%)
-    - NAttreid\CookiePolicy\ICookiePolicyFactory
+	- NAttreid\Utils\Hasher(%security.salt%)
+	- NAttreid\CookiePolicy\ICookiePolicyFactory

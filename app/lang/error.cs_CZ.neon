@@ -1,19 +1,19 @@
 4xx:
-    title: "Ouha..."
-    message: "Váš prohlížeč poslal žádost, které tento server nerozumí nebo neumí zpracovat."
+	title: "Ouha..."
+	message: "Váš prohlížeč poslal žádost, které tento server nerozumí nebo neumí zpracovat."
 403:
-    title: "Přístup odepřen"
-    name: "chyba 403"
-    message: "Nemáte oprávnění ke shlédnutí této stránky. Prosím, obráťte na správce webu, pokud si myslíte, že se vám má stránka zobrazit."
+	title: "Přístup odepřen"
+	name: "chyba 403"
+	message: "Nemáte oprávnění ke shlédnutí této stránky. Prosím, obráťte na správce webu, pokud si myslíte, že se vám má stránka zobrazit."
 404:
-    title: "Stránka nenalezena"
-    name: "chyba 404"
-    message: "Požadovaná stránka nebyla nalezena. Je možné, že adresa není správná, nebo že stránka již neexistuje."
+	title: "Stránka nenalezena"
+	name: "chyba 404"
+	message: "Požadovaná stránka nebyla nalezena. Je možné, že adresa není správná, nebo že stránka již neexistuje."
 405:
-    title: "Metoda není povolena"
-    name: "chyba 405"
-    message: "Požadovaná metoda není povolena pro tuto URL."
+	title: "Metoda není povolena"
+	name: "chyba 405"
+	message: "Požadovaná metoda není povolena pro tuto URL."
 410:
-    title: "Stránka nenalezena"
-    name: "chyba 410"
-    message: "Požadovaná stránka byla stažena z webu. Omlouváme se za nepříjemnosti."
+	title: "Stránka nenalezena"
+	name: "chyba 410"
+	message: "Požadovaná stránka byla stažena z webu. Omlouváme se za nepříjemnosti."
