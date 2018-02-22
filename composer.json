@@ -40,7 +40,8 @@
     "joseki/webloader-filters": "~1.1",
     "oyejorge/less.php": "~1.7",
     "nattreid/image-storage": "~1.0",
-    "kdyby/translation": "~2.4"
+    "kdyby/translation": "~2.4",
+    "nextras/mail-panel": "2.4-beta1"
   },
   "require-dev": {
     "nette/tester": "^1.7",
