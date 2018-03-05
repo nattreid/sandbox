@@ -21,7 +21,7 @@ extensions:
 	mailing: NAttreid\Mailing\DI\MailingExtension
 	webloader: WebLoader\Nette\Extension
 	dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
-	orm: Nattreid\Orm\DI\OrmExtension
+	orm: NAttreid\Orm\DI\OrmExtension
 	appManager: NAttreid\AppManager\DI\AppManagerExtension
 	console: NAttreid\Console\DI\ConsoleExtension
 	securityExtension: NAttreid\Security\DI\SecurityExtension
