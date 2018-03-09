@@ -79,6 +79,7 @@ webloader:
 
 appManager:
 	sessionExpiration: %security.sessionExpiration%
+	maxRows: 1000
 	backupDir:
 		- %appDir%/../assets
 		- %wwwDir%/upload
