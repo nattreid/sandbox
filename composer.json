@@ -11,6 +11,12 @@
       "email": "attreid@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/attreid/translation"
+    }
+  ],
   "require": {
     "php": ">=7.1",
     "nette/application": "^2.4",
