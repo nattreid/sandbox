@@ -40,7 +40,7 @@
     "nattreid/cms": "~1.0",
     "nattreid/analytics": "~1.0",
     "nattreid/web-manager": "~1.0",
-    "nattreid/google-api": "~1.0",
+    "nattreid/google-api": "~2.0",
     "nextras/secured-links": "~1.3",
     "attreid/webloader": "~2.5",
     "joseki/webloader-filters": "~1.1",
