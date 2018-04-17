@@ -1,0 +1,9 @@
+{block content}
+{foreach $pages as $page}
+    {if $iterator->first}
+        <h1 n:if="$page->title">{$page->title}</h1>
+    {else}
+        <h2 n:if="$page->title">{$page->title}</h2>
+    {/if}
+    {$page->content|noescape}
+{/foreach}

@@ -41,4 +41,9 @@ class HomepagePresenter extends BasePresenter
 	{
 		$this->template->page = $this->page;
 	}
+
+	public function renderOnePage(): void
+	{
+		$this->template->pages = $this->pageService->findMenuPages();
+	}
 }
