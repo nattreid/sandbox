@@ -1,9 +1,10 @@
 $(document).ready(function () {
     $.nette.init();
 
-    $('a[href^="#"]').click(function () {
+    $("a[href*='#']").click(function () {
+        var href = $.attr(this, 'href');
         $('html, body').animate({
-            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+            scrollTop: $('[name="' + href.substr(href.indexOf('#') + 1) + '"]').offset().top
         }, 500);
 
         return false;
