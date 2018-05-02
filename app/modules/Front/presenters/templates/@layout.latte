@@ -27,7 +27,7 @@
     <meta name="robots" content="index,follow"/>
     <meta name="author" content=""/>
 
-    {control googleApi:head}
+    {control googleApi}
 
     {control css}
     {control js}
@@ -35,6 +35,7 @@
     {block head}{/block}
 </head>
 <body>
+{control googleApi:event}
 {control flashMessages}
 {block content}{/block}
 <div id="copyright">
@@ -46,7 +47,6 @@
 {block components}{/block}
 
 <script async type="text/javascript" src="/js/nTracker.min.js"></script>
-{control googleApi}
 {block scripts}{/block}
 </body>
 </html>
