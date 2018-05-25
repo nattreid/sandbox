@@ -25,16 +25,22 @@ extensions:
 	appManager: NAttreid\AppManager\DI\AppManagerExtension
 	console: NAttreid\Console\DI\ConsoleExtension
 	securityExtension: NAttreid\Security\DI\SecurityExtension
+	translator: Kdyby\Translation\DI\TranslationExtension
 	cms: NAttreid\Cms\DI\CmsExtension
 	webManager: NAttreid\WebManager\DI\WebManagerExtension
 	analytics: NAttreid\Analytics\DI\AnalyticsExtension
+	googleApi: NAttreid\GoogleApi\DI\GoogleApiExtension
+	tracking: NAttreid\Tracking\DI\TrackingExtension
 
-	- Kdyby\Translation\DI\TranslationExtension
 	- NAttreid\Latte\DI\LatteExtension
 	- NAttreid\Form\DI\FormExtension
 	- IPub\FlashMessages\DI\FlashMessagesExtension
-	- NAttreid\Tracking\DI\TrackingExtension
-	- NAttreid\GoogleApi\DI\GoogleApiExtension
+
+googleApi:
+	anonymizeIp: true
+
+tracking:
+	anonymizeIp: true
 
 webManager:
 	homepage: 'Homepage:default'
