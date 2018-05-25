@@ -27,7 +27,10 @@
     <meta name="robots" content="index,follow"/>
     <meta name="author" content=""/>
 
-    {control googleApi}
+    {if $cookiePolicy->analytics}
+        {control googleApi}
+    {/if}
+
 
     {control css}
     {control js}
@@ -35,7 +38,9 @@
     {block head}{/block}
 </head>
 <body>
-{control googleApi:event}
+{if $cookiePolicy->analytics}
+    {control googleApi:event}
+{/if}
 {control flashMessages}
 {block content}{/block}
 <div id="copyright">
@@ -46,7 +51,7 @@
 {control cookiePolicy}
 {block components}{/block}
 
-<script async type="text/javascript" src="/js/nTracker.min.js"></script>
+<script n:if="$cookiePolicy->analytics" async type="text/javascript" src="/js/nTracker.min.js"></script>
 {block scripts}{/block}
 </body>
 </html>

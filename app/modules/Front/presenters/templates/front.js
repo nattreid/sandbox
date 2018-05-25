@@ -3,9 +3,12 @@ $(document).ready(function () {
 
     $("a[href*='#']").click(function () {
         var href = $.attr(this, 'href');
-        $('html, body').animate({
-            scrollTop: $('[name="' + href.substr(href.indexOf('#') + 1) + '"]').offset().top
-        }, 500);
+        var name = href.substr(href.indexOf('#') + 1);
+        if (name) {
+            $('html, body').animate({
+                scrollTop: $('[name="' + name + '"]').offset().top
+            }, 500);
+        }
 
         return false;
     });

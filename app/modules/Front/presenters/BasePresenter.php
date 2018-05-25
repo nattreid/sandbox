@@ -27,6 +27,8 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 		parent::beforeRender();
 		$this->template->configurator = $this->configurator;
 
+		$this->template->cookiePolicy = $this['cookiePolicy'];
+
 		$this->template->menuPages = $this->pageService->findMenuPages();
 		$this->template->footerPages = $this->pageService->findFooterPages();
 	}
@@ -71,14 +73,14 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 	{
 		$control = $this->cookiePolicyFactory->create();
 
-		$control->getTranslator()->setLang($this->locale);
+		$control->translator->setLang($this->locale);
 
 		$link = $this->configurator->cookiePolicyLink;
 		if (!empty($link)) {
 			$control->setLink($link);
 		}
 
-		$control->setView($this->configurator->cookiePolicy);
+		$control->setEnable($this->configurator->cookiePolicy);
 
 		return $control;
 	}
