@@ -45,8 +45,7 @@
   },
   "require-dev": {
     "nette/tester": "^1.7",
-    "kdyby/fake-session": "~2.0",
-    "nattreid/cookie-policy": "dev-master as 1.0"
+    "kdyby/fake-session": "~2.0"
   },
   "minimum-stability": "stable"
 }
