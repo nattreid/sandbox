@@ -35,6 +35,7 @@ extensions:
 	- NAttreid\Latte\DI\LatteExtension
 	- NAttreid\Form\DI\FormExtension
 	- IPub\FlashMessages\DI\FlashMessagesExtension
+	- NAttreid\CookiePolicy\DI\CookiePolicyExtension
 
 googleApi:
 	anonymizeIp: true
@@ -117,4 +118,3 @@ services:
 	jsMin: Joseki\Webloader\JsMinFilter
 
 	- NAttreid\Utils\Hasher(%security.salt%)
-	- NAttreid\CookiePolicy\ICookiePolicyFactory

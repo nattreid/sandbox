@@ -75,13 +75,6 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 
 		$control->translator->setLang($this->locale);
 
-		$link = $this->configurator->cookiePolicyLink;
-		if (!empty($link)) {
-			$control->setLink($link);
-		}
-
-		$control->setEnable($this->configurator->cookiePolicy);
-
 		return $control;
 	}
 
