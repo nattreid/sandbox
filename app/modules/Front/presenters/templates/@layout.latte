@@ -42,6 +42,50 @@
 {/if}
 {control flashMessages}
 {block content}{/block}
+<header>
+    <a n:href="Homepage:" class="logo">
+        <img n:img="$configurator->logo, '260x36'" alt="{$configurator->title}">
+    </a>
+    <div id="menu">
+        <ul>
+            <li>
+                <a n:href="Homepage:" n:class="$presenter->linkCurrent ? active">
+                    {_'front.home'}
+                </a>
+            </li>
+            {if $configurator->onePage}
+                {include menuItems, items => $menuPages, onePage => true}
+            {else}
+                {include menuItems, items => $menuPages}
+            {/if}
+        </ul>
+    </div>
+    <span id="menu-button" class="fa fa-bars"></span>
+
+    {define menuItems}
+        {default $onePage = false}
+        <li n:foreach="$items as $row">
+            {if $onePage}
+                <a href="{if $row->isLink}{$row->link}{else}{link Homepage:#$row->url}{/if}">{$row->name}</a>
+            {else}
+                <a href="{$row->link}" n:class="$presenter->linkCurrent ? active">{$row->name}</a>
+            {/if}
+            <div n:if="$row->hasMenuChildren">
+                <ul>
+                    {include menuItems, items => $row->menuChildren, onePage => false}
+                </ul>
+            </div>
+        </li>
+    {/define}
+</header>
+<div id="footer">
+    {$footer->content|noescape}
+    <ul n:if="$footerPages->count() > 0">
+        <li n:foreach="$footerPages as $row">
+            <a href="{$row->link}">{$row->name}</a>
+        </li>
+    </ul>
+</div>
 <div id="copyright">
     {block copyright}
         © {NAttreid\Utils\Date::getYearToActual('2014')} <a href="mailto:attreid@gmail.com">Attreid</a>

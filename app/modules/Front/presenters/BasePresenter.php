@@ -10,6 +10,7 @@ use NAttreid\GoogleApi\GoogleApi;
 use NAttreid\GoogleApi\IGoogleApiFactory;
 use NAttreid\WebManager\Services\PageService;
 use Nette\Utils\Strings;
+use Nextras\Dbal\UniqueConstraintViolationException;
 use WebLoader\Nette\CssLoader;
 use WebLoader\Nette\JavaScriptLoader;
 use WebLoader\Nette\LoaderFactory;
@@ -22,6 +23,9 @@ use WebLoader\Nette\LoaderFactory;
 abstract class BasePresenter extends \App\Presenters\BasePresenter
 {
 
+	/**
+	 * @throws UniqueConstraintViolationException
+	 */
 	protected function beforeRender(): void
 	{
 		parent::beforeRender();
@@ -31,6 +35,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter
 
 		$this->template->menuPages = $this->pageService->findMenuPages();
 		$this->template->footerPages = $this->pageService->findFooterPages();
+		$this->template->footer = $this->pageService->getContent('footer');
 	}
 
 	/* ###################################################################### */

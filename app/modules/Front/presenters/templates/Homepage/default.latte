@@ -1,3 +1,7 @@
+{block title}{$homepage->title}{/block}
+{block description}{$homepage->description}{/block}
+{block keywords}{$homepage->keywords}{/block}
+{block ogImage}{$homepage->image}{/block}
+
 {block content}
-<h1 n:block="title">Homepage</h1>
-<a n:href=":Cms:Homepage:">Cms</a>
+{include homepage.latte}

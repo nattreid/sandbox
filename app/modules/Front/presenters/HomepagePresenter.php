@@ -7,6 +7,7 @@ namespace App\FrontModule\Presenters;
 use NAttreid\WebManager\Model\Pages\Page;
 use NAttreid\WebManager\Services\PageService;
 use Nette\Application\BadRequestException;
+use Nextras\Dbal\UniqueConstraintViolationException;
 
 /**
  * Homepage presenter.
@@ -42,8 +43,20 @@ class HomepagePresenter extends BasePresenter
 		$this->template->page = $this->page;
 	}
 
+	/**
+	 * @throws UniqueConstraintViolationException
+	 */
 	public function renderOnePage(): void
 	{
 		$this->template->pages = $this->pageService->findMenuPages();
+		$this->renderDefault();
+	}
+
+	/**
+	 * @throws UniqueConstraintViolationException
+	 */
+	public function renderDefault(): void
+	{
+		$this->template->homepage = $this->pageService->getContent('homepage');
 	}
 }
