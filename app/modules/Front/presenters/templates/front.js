@@ -3,10 +3,10 @@ $(document).ready(function () {
 
     $("a[href*='#']").click(function () {
         var href = $.attr(this, 'href');
-        var name = href.substr(href.indexOf('#') + 1);
-        if (name) {
+        var id = href.substr(href.indexOf('#') + 1);
+        if (id) {
             $('html, body').animate({
-                scrollTop: $('[name="' + name + '"]').offset().top
+                scrollTop: $('[id="' + id + '"]').offset().top
             }, 500);
         }
 

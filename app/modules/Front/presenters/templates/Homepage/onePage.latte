@@ -1,11 +1,10 @@
 {block content}
 {include homepage.latte}
-{foreach $pages as $page}
-    <a name="{$page->url}"/>
+<div n:foreach="$pages as $page" id="page_{$page->url}">
     {if $iterator->first}
         <h1 n:if="$page->title">{$page->title}</h1>
     {else}
         <h2 n:if="$page->title">{$page->title}</h2>
     {/if}
     {$page->content|noescape}
-{/foreach}
+</div>

@@ -37,11 +37,25 @@
     {block head}{/block}
 </head>
 <body>
+<div id="page_top"></div>
 {if $cookiePolicy->analytics}
     {control googleApi:event}
 {/if}
 {control flashMessages}
 {block content}{/block}
+<div id="footer">
+    {$footer->content|noescape}
+    <ul n:if="$footerPages->count() > 0">
+        <li n:foreach="$footerPages as $row">
+            <a href="{$row->link}">{$row->name}</a>
+        </li>
+    </ul>
+</div>
+<div id="copyright">
+    {block copyright}
+        © {NAttreid\Utils\Date::getYearToActual('2014')} <a href="mailto:attreid@gmail.com">Attreid</a>
+    {/block}
+</div>
 <header>
     <a n:href="Homepage:" class="logo">
         <img n:img="$configurator->logo, '260x36'" alt="{$configurator->title}">
@@ -66,7 +80,7 @@
         {default $onePage = false}
         <li n:foreach="$items as $row">
             {if $onePage}
-                <a href="{if $row->isLink}{$row->link}{else}{link Homepage:#$row->url}{/if}">{$row->name}</a>
+                <a href="{if $row->isLink}{$row->link}{else}{link Homepage:#page_$row->url}{/if}">{$row->name}</a>
             {else}
                 <a href="{$row->link}" n:class="$presenter->linkCurrent ? active">{$row->name}</a>
             {/if}
@@ -78,19 +92,6 @@
         </li>
     {/define}
 </header>
-<div id="footer">
-    {$footer->content|noescape}
-    <ul n:if="$footerPages->count() > 0">
-        <li n:foreach="$footerPages as $row">
-            <a href="{$row->link}">{$row->name}</a>
-        </li>
-    </ul>
-</div>
-<div id="copyright">
-    {block copyright}
-        © {NAttreid\Utils\Date::getYearToActual('2014')} <a href="mailto:attreid@gmail.com">Attreid</a>
-    {/block}
-</div>
 {control cookiePolicy}
 {block components}{/block}
 
