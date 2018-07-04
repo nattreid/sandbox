@@ -66,7 +66,7 @@ gulp.task('jsFrontLocale', function () {
 gulp.task('cssFront', function () {
     return gulp.src([
         paths.dev + 'jquery-ui/themes/base/jquery-ui.css',
-        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.less'
+        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.min.css'
     ])
         .pipe(less())
         .pipe(concat('front.min.css'))
