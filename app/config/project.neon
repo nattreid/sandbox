@@ -4,6 +4,10 @@ parameters:
 	front:
 		url: '//sandbox/'
 
+router:
+	routers:
+		- App\FrontModule\Router\FrontRouter(%front.url%)
+
 dbal:
 	driver: mysqli
 	host: 127.0.0.1

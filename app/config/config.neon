@@ -49,10 +49,6 @@ webManager:
 	onePage: 'Homepage:onePage'
 	module: 'Front'
 
-router:
-	routers:
-		- App\FrontModule\Router\FrontRouter(%front.url%)
-
 images:
 	noImage: 'default/default.png'
 
