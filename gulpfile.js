@@ -3,14 +3,14 @@ var gulp = require('gulp'),
     minify = require('gulp-clean-css'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
     del = require('del'),
     modifyCssUrls = require('gulp-modify-css-urls'),
     streamqueue = require('streamqueue'),
-    file = require('gulp-file');
+    file = require('gulp-file'),
+    merge = require('merge-stream');
 
 var paths = {
-    'dev': './bower_components/',
+    'dev': './node_modules/',
     'production': {
         'js': './www/js/',
         'css': './www/css/',
@@ -39,14 +39,15 @@ var locale = {
 gulp.task('jsFront', function () {
     return gulp.src([
         paths.dev + 'jquery/dist/jquery.js',
-        paths.dev + 'jquery-ui/jquery-ui.js',
+        paths.dev + 'jquery-ui-dist/jquery-ui.js',
         paths.dev + 'nette.ajax.js/nette.ajax.js',
         paths.dev + 'nette.ajax.js/extensions/confirm.ajax.js',
         paths.dev + 'jquery-ui-touch-punch/jquery.ui.touch-punch.js',
-        paths.dev + 'nette-live-form-validation/live-form-validation.js',
+        paths.dev + 'live-form-validation/live-form-validation.js',
         paths.dev + 'nattreid-utils/assets/utils.js',
         paths.dev + 'history.nette.ajax.js/client-side/history.ajax.js',
-        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.js'
+        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.js',
+        paths.dev + 'lightbox2/dist/js/lightbox.js'
     ])
         .pipe(concat('front.min.js'))
         .pipe(uglify())
@@ -54,21 +55,38 @@ gulp.task('jsFront', function () {
 });
 
 gulp.task('jsFrontLocale', function () {
-    for (var lang in locale) gulp.src(locale[lang])
-        .pipe(concat('front.' + lang + '.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.production.lang));
+    var streams = [];
+    for (var lang in locale) {
+        var stream = gulp.src(locale[lang])
+            .pipe(concat('front.' + lang + '.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest(paths.production.lang));
+        streams.push(stream);
+    }
+    return merge.apply(this, streams);
 });
 
 // *****************************************************************************
 // ************************************  CSS  **********************************
 
 gulp.task('cssFront', function () {
-    return gulp.src([
-        paths.dev + 'jquery-ui/themes/base/jquery-ui.css',
-        paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.min.css'
-    ])
-        .pipe(less())
+    return streamqueue({objectMode: true},
+        gulp.src(paths.dev + 'font-awesome/css/font-awesome.css')
+            .pipe(modifyCssUrls({
+                modify: function (url, filePath) {
+                    return url.replace('../fonts/', '/fonts/font-awesome/');
+                }
+            })),
+        gulp.src(paths.dev + 'lightbox2/dist/css/lightbox.css')
+            .pipe(modifyCssUrls({
+                modify: function (url, filePath) {
+                    return url.replace('../images/', '/images/lightbox/');
+                }
+            })),
+        gulp.src([
+            paths.dev + 'jquery-ui-dist/jquery-ui.theme.css',
+            paths.dev + 'nattreid-cookie-policy/assets/cookiePolicy.min.css'
+        ]))
         .pipe(concat('front.min.css'))
         .pipe(minify({keepSpecialComments: 0}))
         .pipe(gulp.dest(paths.production.css));
@@ -78,20 +96,26 @@ gulp.task('cssFront', function () {
 // **********************************  Fonts  **********************************
 
 gulp.task('fonts', function () {
-    gulp.src(paths.dev + 'font-awesome/fonts/*')
-        .pipe(gulp.dest(paths.production.fonts + 'font-awesome'));
-    gulp.src(paths.dev + 'bootstrap/fonts/*')
-        .pipe(gulp.dest(paths.production.fonts + 'bootstrap'));
+    var streams = [];
+    streams.push(gulp.src(paths.dev + 'font-awesome/fonts/*')
+        .pipe(gulp.dest(paths.production.fonts + 'font-awesome')));
+    streams.push(gulp.src(paths.dev + 'bootstrap/fonts/*')
+        .pipe(gulp.dest(paths.production.fonts + 'bootstrap')));
+    return merge.apply(this, streams);
 });
 
 // *****************************************************************************
 // *********************************  Images  **********************************
 
 gulp.task('images', function () {
-    gulp.src(paths.dev + 'nattreid-file-manager/assets/images/icons.png')
-        .pipe(gulp.dest(paths.production.images + 'fileManager'));
-    gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
-        .pipe(gulp.dest(paths.production.images + 'cms/jquery-ui'));
+    var streams = [];
+    streams.push(gulp.src(paths.dev + 'nattreid-file-manager/assets/images/icons.png')
+        .pipe(gulp.dest(paths.production.images + 'fileManager')));
+    streams.push(gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
+        .pipe(gulp.dest(paths.production.images + 'cms/jquery-ui')));
+    streams.push(gulp.src(paths.dev + 'lightbox2/dist/images/*.*')
+        .pipe(gulp.dest(paths.production.images + 'lightbox')));
+    return merge.apply(this, streams);
 });
 
 // *****************************************************************************
@@ -108,9 +132,9 @@ gulp.task('tracking', function () {
 // ********************************  CK Editor  ********************************
 
 gulp.task('ckeditor', function () {
-    gulp.src([
-        paths.dev + 'ckeditor/**/*',
-        '!' + paths.dev + 'ckeditor/config.js'
+    return gulp.src([
+        paths.dev + 'ckeditor-full/**/*',
+        '!' + paths.dev + 'ckeditor-full/config.js'
     ])
         .pipe(gulp.dest(paths.production.ckeditor));
 });
@@ -119,9 +143,9 @@ gulp.task('ckeditor', function () {
 // ********************************  KC Finder  ********************************
 
 gulp.task('kcfinder', function () {
-    gulp.src([
-        paths.dev + 'attreid-kcfinder/**/*',
-        '!' + paths.dev + 'attreid-kcfinder/conf/config.php'
+    return gulp.src([
+        paths.dev + 'kcfinder/**/*',
+        '!' + paths.dev + 'kcfinder/conf/config.php'
     ])
         .pipe(gulp.dest(paths.production.kcfinder));
 });
@@ -130,7 +154,7 @@ gulp.task('kcfinder', function () {
 // *******************************  Maintenance  *******************************
 
 gulp.task('on', function (cb) {
-    del(paths.production.temp + 'maintenance', cb);
+    return del(paths.production.temp + 'maintenance', cb);
 });
 
 gulp.task('off', function (cb) {
@@ -142,11 +166,11 @@ gulp.task('off', function (cb) {
 // **********************************  Clean  **********************************
 
 gulp.task('cache', function (cb) {
-    del(paths.production.cache, cb);
+    return del(paths.production.cache, cb);
 });
 
 gulp.task('clean', function (cb) {
-    del([
+    return del([
         paths.production.js,
         paths.production.css,
         paths.production.lang,
@@ -164,5 +188,5 @@ gulp.task('clean', function (cb) {
 
 // *****************************************************************************
 
-gulp.task('default', ['cache', 'jsFront', 'jsFrontLocale', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder']);
+gulp.task('default', gulp.series('cache', 'jsFront', 'jsFrontLocale', 'cssFront', 'fonts', 'images', 'tracking', 'ckeditor', 'kcfinder'));
 

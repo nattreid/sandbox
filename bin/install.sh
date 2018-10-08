@@ -61,7 +61,6 @@ prepareScripts() {
     cd ${ROOT_FOLDER}
 
     npm install
-    bower install
     gulp
 
     cd ${DEFAULT_PWD}

@@ -6,9 +6,9 @@ Je třeba mít nainstalované balíčky **npm** a **node.js**
 sudo apt-get install nodejs npm
 ```
 
-Nainstalujeme **bower** a **gulp**
+Nainstalujeme **gulp**
 ```bash
-sudo npm install -g bower gulp
+sudo npm install -g gulp
 ```
 
 A poté stačí jen spustit **bin/install.sh**
@@ -18,7 +18,6 @@ anebo můžete manuálně stáhnout [Composer](http://doc.nette.org/composer) a 
 composer create-project nattreid/sandbox
 cd nazevProjektu
 npm install
-bower install
 gulp
 ```
 

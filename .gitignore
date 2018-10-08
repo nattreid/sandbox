@@ -4,7 +4,7 @@
 /nbproject
 /.idea
 /node_modules
-/bower_components
+/package-lock.json
 /app/config/config.local.neon
 /composer.lock
 
