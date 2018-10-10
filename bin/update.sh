@@ -11,7 +11,6 @@ git checkout -- app/
 git checkout -- bin/
 git pull
 composer update
-bower update
 gulp clean
 gulp
 gulp on
