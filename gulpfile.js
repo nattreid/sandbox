@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     del = require('del'),
     modifyCssUrls = require('gulp-modify-css-urls'),
-    streamqueue = require('streamqueue'),
     file = require('gulp-file'),
     merge = require('merge-stream');
 
@@ -70,7 +69,7 @@ gulp.task('jsFrontLocale', function () {
 // ************************************  CSS  **********************************
 
 gulp.task('cssFront', function () {
-    return streamqueue({objectMode: true},
+    return merge(
         gulp.src(paths.dev + 'font-awesome/css/font-awesome.css')
             .pipe(modifyCssUrls({
                 modify: function (url, filePath) {
@@ -96,26 +95,24 @@ gulp.task('cssFront', function () {
 // **********************************  Fonts  **********************************
 
 gulp.task('fonts', function () {
-    var streams = [];
-    streams.push(gulp.src(paths.dev + 'font-awesome/fonts/*')
-        .pipe(gulp.dest(paths.production.fonts + 'font-awesome')));
-    streams.push(gulp.src(paths.dev + 'bootstrap/fonts/*')
-        .pipe(gulp.dest(paths.production.fonts + 'bootstrap')));
-    return merge.apply(this, streams);
+    return merge(
+        gulp.src(paths.dev + 'font-awesome/fonts/*')
+            .pipe(gulp.dest(paths.production.fonts + 'font-awesome')),
+        gulp.src(paths.dev + 'bootstrap/fonts/*')
+            .pipe(gulp.dest(paths.production.fonts + 'bootstrap')));
 });
 
 // *****************************************************************************
 // *********************************  Images  **********************************
 
 gulp.task('images', function () {
-    var streams = [];
-    streams.push(gulp.src(paths.dev + 'nattreid-file-manager/assets/images/icons.png')
-        .pipe(gulp.dest(paths.production.images + 'fileManager')));
-    streams.push(gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
-        .pipe(gulp.dest(paths.production.images + 'cms/jquery-ui')));
-    streams.push(gulp.src(paths.dev + 'lightbox2/dist/images/*.*')
-        .pipe(gulp.dest(paths.production.images + 'lightbox')));
-    return merge.apply(this, streams);
+    return merge(
+        gulp.src(paths.dev + 'nattreid-file-manager/assets/images/icons.png')
+            .pipe(gulp.dest(paths.production.images + 'fileManager')),
+        gulp.src(paths.dev + 'jquery-ui/themes/smoothness/images/*.png')
+            .pipe(gulp.dest(paths.production.images + 'cms/jquery-ui')),
+        gulp.src(paths.dev + 'lightbox2/dist/images/*.*')
+            .pipe(gulp.dest(paths.production.images + 'lightbox')));
 });
 
 // *****************************************************************************
