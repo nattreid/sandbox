@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     del = require('del'),
     modifyCssUrls = require('gulp-modify-css-urls'),
     file = require('gulp-file'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    streamqueue = require('streamqueue');
 
 var paths = {
     'dev': './node_modules/',
@@ -69,7 +70,7 @@ gulp.task('jsFrontLocale', function () {
 // ************************************  CSS  **********************************
 
 gulp.task('cssFront', function () {
-    return merge(
+    return streamqueue.obj(
         gulp.src(paths.dev + 'font-awesome/css/font-awesome.css')
             .pipe(modifyCssUrls({
                 modify: function (url, filePath) {
