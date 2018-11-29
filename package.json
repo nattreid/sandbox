@@ -11,11 +11,11 @@
   },
   "license": "MIT",
   "dependencies": {
-	"nattreid-cms": "~1.6",
+	"lightbox2": "~2.10",
 	"nattreid-analytics": "~1.4",
-	"nattreid-web-manager": "~1.7",
+	"nattreid-cms": "^1.6.10",
 	"nattreid-cookie-policy": "~2.1",
-	"lightbox2": "~2.10"
+	"nattreid-web-manager": "~1.7"
   },
   "devDependencies": {
 	"del": "~3.0",
