@@ -5,7 +5,7 @@ paths=(
     )
 
 urls=(
-    "sandbox"
+    "https://sandbox"
     )
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -18,7 +18,7 @@ for url in "${urls[@]}"
 do
 	for path in "${paths[@]}"
     do
-        wget -qO- --load-cookies cookies.txt "https://www.$url$path" &> /dev/null
+        wget -qO- --load-cookies cookies.txt "$url$path" &> /dev/null
     done
 done
 
