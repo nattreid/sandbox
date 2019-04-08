@@ -83,10 +83,13 @@ webloader:
 
 appManager:
 	sessionExpiration: %security.sessionExpiration%
-	maxRows: 1000
-	backupDir:
-		- %appDir%/../assets
-		- %wwwDir%/upload
+	backup:
+		dir:
+			- %appDir%/../assets
+			- %wwwDir%/upload
+		excludeTables:
+			- _tracking
+		maxRows: 1000
 
 console:
 	commands:

@@ -40,8 +40,7 @@
 	"attreid/webloader": "~2.5",
 	"joseki/webloader-filters": "~1.1",
 	"oyejorge/less.php": "~1.7",
-	"nattreid/image-storage": "~1.0",
-	"kdyby/translation": "~2.4"
+	"nattreid/image-storage": "~1.0"
   },
   "require-dev": {
 	"nette/tester": "^1.7",
