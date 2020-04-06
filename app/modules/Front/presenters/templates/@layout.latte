@@ -24,6 +24,8 @@
 
     <meta property="og:url" content="{ifset ogUrl}{include ogUrl|striptags|strip}{else}{link //this}{/ifset}"/>
 
+    <link rel="canonical" href="{ifset canonical}{include canonical|striptags|strip}{else}{link //this}{/ifset}" />
+
     <meta name="robots" content="index,follow"/>
     <meta name="author" content=""/>
 
