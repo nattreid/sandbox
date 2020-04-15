@@ -26,6 +26,7 @@ use Nextras\Application\UI\SecuredLinksPresenterTrait;
  * Class BasePresenter
  *
  * @property-read User $user
+ * @property bool $indexByRobot
  *
  * @author Attreid <attreid@gmail.com>
  */
@@ -46,6 +47,22 @@ abstract class BasePresenter extends Presenter
 	{
 		parent::beforeRender();
 		$this->redrawFlashMessages();
+	}
+
+	protected function afterRender()
+	{
+		parent::afterRender();
+		$this->template->indexByRobot = $this->indexByRobot;
+	}
+
+	/* ###################################################################### */
+	/*                                Robot index                             */
+
+	private $indexByRobot = true;
+
+	protected function setIndexByRobot(bool $value): void
+	{
+		$this->indexByRobot = $value;
 	}
 
 	/* ###################################################################### */
